@@ -1,0 +1,1146 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"Profi",
+				"Profile_model"
+			],
+			[
+				"use",
+				"username"
+			],
+			[
+				"Sig",
+				"Signup_model"
+			],
+			[
+				"ech",
+				"echo"
+			],
+			[
+				"new",
+				"newsfeed"
+			],
+			[
+				"lo",
+				"log"
+			],
+			[
+				"con",
+				"controller"
+			],
+			[
+				"ge",
+				"getPosts"
+			],
+			[
+				"st",
+				"status_id"
+			],
+			[
+				"Ut",
+				"Util_model"
+			],
+			[
+				"on",
+				"onclick	Attr"
+			],
+			[
+				"micr",
+				"micro-pic"
+			],
+			[
+				"profile",
+				"profile_pic"
+			],
+			[
+				"fri",
+				"friend_requests_count"
+			],
+			[
+				"user",
+				"user_info"
+			],
+			[
+				"frie",
+				"friend_requests"
+			],
+			[
+				"fr",
+				"friend_requests"
+			],
+			[
+				"fu",
+				"fullname"
+			],
+			[
+				"tes",
+				"test"
+			],
+			[
+				"id",
+				"id"
+			],
+			[
+				"test",
+				"test_arr"
+			],
+			[
+				"arr",
+				"array"
+			],
+			[
+				"t",
+				"tests"
+			],
+			[
+				"friend",
+				"friend_id"
+			],
+			[
+				"li",
+				"like"
+			],
+			[
+				"like",
+				"like_counter"
+			],
+			[
+				"pos",
+				"postArray"
+			],
+			[
+				"max",
+				"max-width"
+			],
+			[
+				"ret",
+				"retrieve_status_all"
+			],
+			[
+				"ec",
+				"echo	echo \"…\""
+			],
+			[
+				"for",
+				"foreach	foreach …"
+			],
+			[
+				"fried",
+				"friend_id"
+			],
+			[
+				"res",
+				"result_object"
+			],
+			[
+				"mar",
+				"margin-left"
+			],
+			[
+				"th",
+				"this"
+			],
+			[
+				"ma",
+				"margin-top"
+			],
+			[
+				"he",
+				"max-height"
+			],
+			[
+				"min",
+				"min-height"
+			],
+			[
+				"fon",
+				"font-size"
+			],
+			[
+				"logi",
+				"loginModal"
+			],
+			[
+				"reg",
+				"regtest"
+			],
+			[
+				"padd",
+				"padding"
+			],
+			[
+				"pad",
+				"padding-bottom"
+			],
+			[
+				"uri",
+				"uri_string"
+			],
+			[
+				"marg",
+				"margin"
+			],
+			[
+				"s",
+				"status_id"
+			],
+			[
+				"user_",
+				"user_id"
+			],
+			[
+				"N",
+				"Newsfeed_model"
+			],
+			[
+				"is",
+				"isTrueReserve"
+			],
+			[
+				"te",
+				"text-indent"
+			],
+			[
+				"pa",
+				"padding-left"
+			],
+			[
+				"rg",
+				"rgba()"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"ion-sid",
+				"ion-side-menus"
+			],
+			[
+				"wi",
+				"width"
+			],
+			[
+				"url",
+				"urlRouterProvider"
+			],
+			[
+				"ion-",
+				"ion-tabs"
+			],
+			[
+				"tem",
+				"templateUrl"
+			],
+			[
+				"ion-side",
+				"ion-side-menus"
+			],
+			[
+				"STA",
+				"stateProvide"
+			],
+			[
+				"us",
+				"username"
+			],
+			[
+				"u",
+				"user_info"
+			],
+			[
+				"log",
+				"login"
+			],
+			[
+				"ima",
+				"imageData"
+			],
+			[
+				"a",
+				"alert"
+			],
+			[
+				"im",
+				"imageURI"
+			],
+			[
+				"IMG",
+				"imageURI"
+			],
+			[
+				"Fi",
+				"FILE_URI"
+			],
+			[
+				"ti",
+				"titt"
+			],
+			[
+				"so",
+				"song_name"
+			],
+			[
+				"read",
+				"readfile"
+			],
+			[
+				"pro",
+				"projectX"
+			],
+			[
+				"si",
+				"signupForm"
+			],
+			[
+				"co",
+				"column"
+			],
+			[
+				"va",
+				"var_dump"
+			],
+			[
+				"var",
+				"var_dump"
+			],
+			[
+				"v",
+				"validateData"
+			],
+			[
+				"loca",
+				"localhost"
+			],
+			[
+				"json",
+				"json_encode"
+			],
+			[
+				"_",
+				"_POST"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"Aut",
+				"Auth_model"
+			],
+			[
+				"passwordveri",
+				"passwordverify"
+			],
+			[
+				"pass",
+				"password"
+			],
+			[
+				"pas",
+				"pass2"
+			],
+			[
+				"sign",
+				"signup"
+			],
+			[
+				"todo",
+				"todo_com_file"
+			],
+			[
+				"todo_",
+				"todo_com_body"
+			],
+			[
+				"vi",
+				"view_comments"
+			],
+			[
+				"tod",
+				"todo_id"
+			],
+			[
+				"Comm",
+				"Comments_model"
+			],
+			[
+				"fi",
+				"filename"
+			],
+			[
+				"fil",
+				"file_path"
+			],
+			[
+				"arra",
+				"array"
+			],
+			[
+				"strto",
+				"strtoupper"
+			],
+			[
+				"ass",
+				"assets"
+			],
+			[
+				"to",
+				"todo_id"
+			],
+			[
+				"base",
+				"base_url"
+			],
+			[
+				"print",
+				"print_r"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/home/gremdev/Desktop/SublimeTxt Shortcut Keys.txt",
+			"settings":
+			{
+				"buffer_size": 231,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/gremdev/projects/www/mustean/application/controllers/public/main.php",
+			"settings":
+			{
+				"buffer_size": 522,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/gremdev/projects/www/mustean/application/views/newsfeed.php",
+			"settings":
+			{
+				"buffer_size": 17033,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/gremdev/Downloads/sns theme/index.html",
+			"settings":
+			{
+				"buffer_size": 17579,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/gremdev/projects/www/mustean/application/views/template.php",
+			"settings":
+			{
+				"buffer_size": 842,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/gremdev/projects/www/mustean/application/controllers/profile.php",
+			"settings":
+			{
+				"buffer_size": 921,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/gremdev/projects/www/mustean/application/models/profile_model.php",
+			"settings":
+			{
+				"buffer_size": 355,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/gremdev/projects/www/must_sns/application/controllers/profile.php",
+			"settings":
+			{
+				"buffer_size": 1223,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 400.0,
+		"selected_items":
+		[
+			[
+				"pa",
+				"Package Control: Install Package"
+			],
+			[
+				"pac",
+				"Package Control: Remove Package"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"packa",
+				"Package Control: List Packages"
+			]
+		],
+		"width": 601.0
+	},
+	"console":
+	{
+		"height": 139.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/gremdev/projects/www/mustean",
+		"/home/gremdev/projects/www/mustean/application",
+		"/home/gremdev/projects/www/mustean/application/controllers",
+		"/home/gremdev/projects/www/mustean/application/controllers/private",
+		"/home/gremdev/projects/www/mustean/application/controllers/public",
+		"/home/gremdev/projects/www/mustean/application/core",
+		"/home/gremdev/projects/www/mustean/application/models",
+		"/home/gremdev/projects/www/mustean/application/views",
+		"/home/gremdev/projects/www/mustean/public",
+		"/home/gremdev/projects/www/mustean/public/css",
+		"/home/gremdev/projects/www/mustean/public/js"
+	],
+	"file_history":
+	[
+		"/home/gremdev/projects/www/mustean/public/css/homestyle.css",
+		"/home/gremdev/projects/www/must_sns/application/controllers/main.php",
+		"/home/gremdev/projects/www/must_sns/application/models/profile_model.php",
+		"/home/gremdev/projects/www/mustean/application/config/routes.php",
+		"/home/gremdev/projects/www/must_sns/application/config/routes.php",
+		"/home/gremdev/projects/www/mustean/public/data.txt",
+		"/home/gremdev/projects/www/mustean/public/js/newsfeed.js",
+		"/home/gremdev/projects/www/mustean/application/controllers/private/newsfeed.php",
+		"/home/gremdev/projects/www/mustean/application/controllers/private/data.json",
+		"/home/gremdev/projects/www/mustean/application/views/template.php",
+		"/home/gremdev/projects/www/mustean/application/controllers/public/logout.php",
+		"/home/gremdev/projects/www/mustean/application/controllers/public/signup.php",
+		"/home/gremdev/projects/www/must_sns/application/controllers/auth/logout.php",
+		"/home/gremdev/projects/www/mustean/application/views/public/logout.php",
+		"/home/gremdev/projects/www/must_sns/application/controllers/auth/login.php",
+		"/home/gremdev/projects/www/must_sns/application/models/auth_model.php",
+		"/home/gremdev/projects/www/mustean/application/models/login_model.php",
+		"/home/gremdev/projects/www/mustean/application/controllers/public/login.php",
+		"/home/gremdev/projects/www/mustean/application/core/MY_Controller.php",
+		"/home/gremdev/projects/www/mustean/application/config/migration.php",
+		"/home/gremdev/projects/www/mustean/user_guide/changelog.html",
+		"/home/gremdev/projects/www/mustean/system/core/CodeIgniter.php",
+		"/home/gremdev/projects/www/mustean/user_guide/tutorial/create_news_items.html",
+		"/home/gremdev/projects/www/mustean/application/views/public/login.php",
+		"/home/gremdev/projects/www/mustean/system/core/Output.php",
+		"/home/gremdev/projects/www/mustean/application/config/autoload.php",
+		"/home/gremdev/projects/www/mustean/user_guide/overview/goals.html",
+		"/home/gremdev/projects/www/must_sns/application/models/newsfeed_model.php",
+		"/home/gremdev/projects/www/mustean/application/views/public/signup.php",
+		"/home/gremdev/projects/www/mustean/application/models/signup_model.php",
+		"/home/gremdev/projects/www/mustean/system/libraries/Log.php",
+		"/home/gremdev/projects/www/mustean/license.txt",
+		"/home/gremdev/projects/www/mustean/application/views/public/success.php",
+		"/home/gremdev/projects/www/mustean/user_guide/general/autoloader.html",
+		"/home/gremdev/projects/www/mustean/system/libraries/Upload.php",
+		"/home/gremdev/projects/www/mustean/user_guide/libraries/loader.html",
+		"/home/gremdev/projects/www/mustean/system/core/Loader.php",
+		"/home/gremdev/projects/www/mustean/system/core/Router.php",
+		"/home/gremdev/projects/www/mustean/public/js/signup.js",
+		"/home/gremdev/Desktop/ProjectX/www/pages/public/main.html",
+		"/home/gremdev/Desktop/ProjectX/www/pages/public/signup.html",
+		"/home/gremdev/Desktop/ProjectX/www/pages/public/forgot-password.html",
+		"/home/gremdev/Desktop/Map/www/index.html",
+		"/home/gremdev/codes/mobile_dev/bootstrap.sh",
+		"/home/gremdev/codes/mobile_dev/Vagrantfile",
+		"/home/gremdev/Desktop/ProjectX/www/pages/public/map.html",
+		"/home/gremdev/dev_mobile/Vagrantfile",
+		"/home/gremdev/dev_mobile/bootstrap.sh",
+		"/home/gremdev/projects/www/mustean/application/controllers/public/main.php",
+		"/home/gremdev/projects/www/mustean/user_guide/general/managing_apps.html",
+		"/home/gremdev/Desktop/mobiledev/Vagrantfile",
+		"/home/gremdev/mobiledev/Vagrantfile",
+		"/home/gremdev/projects/www/mustean/user_guide/toc.html",
+		"/home/gremdev/Desktop/SublimeTxt Shortcut Keys.txt",
+		"/home/gremdev/projects/www/mustean/system/index.html",
+		"/home/gremdev/projects/www/mustean/system/.htaccess",
+		"/home/gremdev/projects/www/mustean/.htaccess",
+		"/home/gremdev/projects/www/mustean/system/core/Security.php",
+		"/home/gremdev/projects/www/must_sns/user_guide/doc_style/template.html",
+		"/home/gremdev/projects/www/must_sns/public_assets/images/must_out.JPG",
+		"/home/gremdev/projects/www/basecamp/system/database/drivers/mssql/mssql_utility.php",
+		"/home/gremdev/Desktop/ProjectX/www/css/style.css",
+		"/home/gremdev/projects/www/sns/assets/js/signup.js",
+		"/home/gremdev/projects/www/basecamp/index.php",
+		"/home/gremdev/projects/www/basecamp/.htaccess",
+		"/home/gremdev/projects/www/must_sns/application/views/main/main.php",
+		"/home/gremdev/projects/www/sns/application/controllers/main.php",
+		"/home/gremdev/projects/www/sns/user_guide/general/managing_apps.html",
+		"/home/gremdev/projects/www/basecamp/application/config/migration.php",
+		"/home/gremdev/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
+		"/home/gremdev/projects/www/basecamp/application/config/autoload.php",
+		"/home/gremdev/Desktop/ProjectX/www/lib/ionic/js/angular-ui/angular-ui-router.js",
+		"/home/gremdev/Desktop/ProjectX/www/js/app.js",
+		"/home/gremdev/projects/www/sns/assets/css/style.css",
+		"/home/gremdev/projects/www/sns/application/controllers/user_auth.php",
+		"/home/gremdev/projects/www/sns/application/controllers/profile.php",
+		"/home/gremdev/projects/www/basecamp/application/config/mimes.php",
+		"/home/gremdev/projects/www/basecamp/application/config/index.html",
+		"/home/gremdev/projects/www/basecamp/application/config/hooks.php",
+		"/home/gremdev/projects/www/basecamp/application/config/foreign_chars.php",
+		"/home/gremdev/projects/www/basecamp/application/config/doctypes.php",
+		"/home/gremdev/projects/www/basecamp/application/config/database.php",
+		"/home/gremdev/projects/www/basecamp/application/config/constants.php",
+		"/home/gremdev/projects/www/basecamp/application/config/config.php",
+		"/home/gremdev/projects/www/basecamp/application/cache/index.html",
+		"/home/gremdev/projects/www/basecamp/application/cache/.htaccess",
+		"/home/gremdev/projects/www/basecamp/application/index.html",
+		"/home/gremdev/projects/www/basecamp/application/.htaccess",
+		"/home/gremdev/projects/www/basecamp/license.txt",
+		"/home/gremdev/projects/www/basecamp/README.md",
+		"/home/gremdev/projects/www/sns/index.php",
+		"/home/gremdev/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
+		"/home/gremdev/projects/www/must_sns/public_assets/newsfeed.php",
+		"/home/gremdev/projects/www/must_sns/application/views/main/newsfeed.php",
+		"/home/gremdev/projects/www/must_sns/public_assets/js/newsfeed.js",
+		"/home/gremdev/projects/www/must_sns/public_assets/post.php",
+		"/home/gremdev/projects/www/must_sns/application/views/auth/signup.php",
+		"/home/gremdev/projects/www/must_sns/application/helpers/utility_helper.php",
+		"/home/gremdev/Desktop/ProjectX/www/index.html",
+		"/home/gremdev/projects/www/must_sns/application/controllers/status.php",
+		"/home/gremdev/projects/www/must_sns/application/controllers/util.php",
+		"/home/gremdev/projects/www/must_sns/application/models/util_model.php",
+		"/home/gremdev/projects/www/must_sns/public_assets/test.php",
+		"/home/gremdev/projects/www/must_sns/application/views/template.php",
+		"/home/gremdev/projects/www/must_sns/public_assets/js/login.js",
+		"/home/gremdev/projects/www/must_sns/public_assets/js/utility.js",
+		"/home/gremdev/projects/www/must_sns/application/controllers/profile.php",
+		"/home/gremdev/projects/www/must_sns/public_assets/css/style2.css",
+		"/home/gremdev/projects/www/must_sns/public_assets/css/style.css",
+		"/home/gremdev/projects/www/must_sns/application/config/database.php",
+		"/home/gremdev/projects/www/must_sns/application/views/auth/login.php",
+		"/home/gremdev/projects/www/Untitled Folder/index.html",
+		"/home/gremdev/projects/www/must_sns/application/controllers/auth/register.php",
+		"/home/gremdev/projects/www/must_sns/public_assets/js/signup.js",
+		"/home/gremdev/Downloads/must_sns/public_assets/js/login.js",
+		"/home/gremdev/Downloads/must_sns/public_assets/js/signup.js",
+		"/home/gremdev/projects/www/must_sns/application/core/MY_Controller.php",
+		"/home/gremdev/projects/www/Untitled Folder/css/styles.css",
+		"/home/gremdev/projects/www/must_sns/public_assets/js/script.js",
+		"/home/gremdev/projects/www/Untitled Folder/js/scripts.js",
+		"/home/gremdev/projects/www/must_sns/public_assets/css/flat-ui.css",
+		"/home/gremdev/projects/www/Untitled Folder/js/jquery.js",
+		"/home/gremdev/projects/www/basecamp/application/models/project_member.php",
+		"/home/gremdev/projects/www/must_sns/public_assets/js/single_stat.js",
+		"/home/gremdev/projects/www/must_sns/application/views/single_stat.php",
+		"/home/gremdev/projects/www/must_sns/application/controllers/data/status.php",
+		"/home/gremdev/projects/www/must_sns/application/controllers/api/status.php",
+		"/home/gremdev/projects/www/must_sns/application/config/smileys.php"
+	],
+	"find":
+	{
+		"height": 38.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"div",
+			"required",
+			"=\"<?=",
+			"//",
+			"-->",
+			"<!--",
+			"address",
+			"prox",
+			"a",
+			"{\n",
+			"like",
+			"butt",
+			"10000007",
+			"single",
+			"a",
+			"login",
+			"firstname",
+			"me.",
+			"profi",
+			"img",
+			"span",
+			".main-dev ",
+			"div",
+			"></",
+			"h3",
+			"20",
+			"likes",
+			"=\"\">",
+			"postMo",
+			"Ociones",
+			"modal",
+			"login",
+			"single_stat",
+			"empty",
+			"full",
+			");\n",
+			"34495E",
+			"openFB.ini",
+			"\";\n",
+			"());\n",
+			"audioplayer-time",
+			"mp3",
+			"scotchApp",
+			"calm",
+			"Username",
+			"return",
+			"&&",
+			"default",
+			"username",
+			"Username",
+			"firstname",
+			"email",
+			"lastname",
+			"Lastname",
+			"lastname",
+			"signup",
+			"password",
+			"Password",
+			"password",
+			"firstname",
+			"Firstname",
+			"firstname",
+			"login",
+			"Login",
+			"login",
+			"username",
+			");\n",
+			" ?></",
+			"Due",
+			";<",
+			"}"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 4,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/home/gremdev/Desktop/SublimeTxt Shortcut Keys.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 231,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/home/gremdev/projects/www/mustean/application/controllers/public/main.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 522,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/home/gremdev/projects/www/mustean/application/views/newsfeed.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 17033,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								17033,
+								17033
+							]
+						],
+						"settings":
+						{
+							"open_with_edit": true,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 5315.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/home/gremdev/Downloads/sns theme/index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 17579,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/home/gremdev/projects/www/mustean/application/views/template.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 842,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								307,
+								307
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/home/gremdev/projects/www/mustean/application/controllers/profile.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 921,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								178,
+								178
+							]
+						],
+						"settings":
+						{
+							"open_with_edit": true,
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "/home/gremdev/projects/www/mustean/application/models/profile_model.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 355,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								266,
+								266
+							]
+						],
+						"settings":
+						{
+							"_anf_new": "",
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "/home/gremdev/projects/www/must_sns/application/controllers/profile.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1223,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "index.sublime-project",
+	"replace":
+	{
+		"height": 46.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"rou",
+				"application/config/routes.php"
+			],
+			[
+				"tem",
+				"application/views/template.php"
+			],
+			[
+				"temp",
+				"application/views/template.php"
+			],
+			[
+				"my",
+				"application/core/MY_Controller.php"
+			],
+			[
+				"logi",
+				"application/models/login_model.php"
+			],
+			[
+				"login",
+				"application/controllers/public/login.php"
+			],
+			[
+				"log",
+				"application/views/public/login.php"
+			],
+			[
+				"sign",
+				"application/views/public/signup.php"
+			],
+			[
+				"si",
+				"application/models/signup_model.php"
+			],
+			[
+				"aut",
+				"application/config/autoload.php"
+			],
+			[
+				"autl",
+				"application/config/autoload.php"
+			],
+			[
+				"load",
+				"application/config/autoload.php"
+			],
+			[
+				"route",
+				"application/config/routes.php"
+			],
+			[
+				"mustean/signup",
+				"mustean/application/views/public/signup.php"
+			],
+			[
+				"",
+				"basecamp/index.php"
+			],
+			[
+				"main",
+				"mustean/application/controllers/public/main.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 182.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

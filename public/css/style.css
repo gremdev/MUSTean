@@ -1,0 +1,39 @@
+html, body{
+    height: 100%;
+}
+.main{
+
+    background: linear-gradient(
+            rgba(0, 0, 0, 0.7),
+            rgba(0, 0, 0, 0.7)
+    ), url(../img/must_out.JPG) no-repeat center center fixed;
+    /*background: url("../img/must_out.JPG") no-repeat center center fixed;*/
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    min-height: 100%;
+}
+
+.center-piece{
+    max-width: 250px;
+    margin: 0 auto;
+    padding-top: 5%;
+}
+
+.center-piece img{
+    margin-left: 50px;
+}
+
+a, a:hover{
+    text-decoration: none;
+    color: #fff;
+}
+
+.newsfeed a{
+    color: #4D4D4D;
+}
+
+span.error_post{
+    color: red;
+}
