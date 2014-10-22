@@ -47,6 +47,7 @@ $route['signup']                = "public/signup";
 $route['submit/post']			= "submit/post";
 
 $route['status_list/newsfeed_gen']		= "status_list/newsfeed_gen";
+$route['status_list/like/:any']				= "status_list/like";
 $route['status_list/profile_gen']		= "status_list/profile_gen";
 
 $route[':any/edit']				= "profile/edit";

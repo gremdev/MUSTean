@@ -13,7 +13,7 @@ newsfeed.controller('newsfeedController',function($scope,$http){
     $scope.like = function(id) {
      	$http({
 				method: "POST",
-				url: 'http://localhost/must_sns/util/like/'+ id,
+				url: '/status_list/like/'+ id,
 				headers: { 'Content-Type' : 'application/x-www-form-urlencoded' },
 				data: $.param(id)
 				})

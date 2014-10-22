@@ -123,7 +123,7 @@ if (isset($_GET['error_post'])) {
                 <hr>
               <div class="input-group">
                   <div class="input-group-btn">
-                      <button class="btn btn-default">{{post.like}} <i class="glyphicon glyphicon-thumbs-up"> </i> </button>
+                      <button class="btn btn-default" data-ng-click="like(post.id)">{{post.like}} <i class="glyphicon glyphicon-thumbs-up"> </i> </button>
                       <button class="btn btn-default" onclick="alert('Hello')">{{post.comment}} <i class="glyphicon glyphicon-comment"></i></button>
                   </div>
                   <input type="text" class="form-control" placeholder="Add a comment..">

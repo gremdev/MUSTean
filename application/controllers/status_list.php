@@ -37,4 +37,24 @@ class Status_list extends Private_Controller {
 
 	}
 
+	public function like()
+	{
+		$check = $this->Status_list_model->check_if_liked($this->uri->segment(3));
+
+		if ($check == 0)
+		{
+			$like = $this->Status_list_model->like($this->uri->segment(3));
+			var_dump($like);
+		}
+		elseif($check > 0)
+		{
+			$unlike = $this->Status_list_model->unlike($this->uri->segment(3));
+			echo $unlike;
+		}
+		else
+		{
+			echo "error";
+		}
+	}
+
 }
