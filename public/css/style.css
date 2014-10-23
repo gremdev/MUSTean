@@ -37,3 +37,13 @@ a, a:hover{
 span.error_post{
     color: red;
 }
+ul.ui-autocomplete{
+    padding-top: 20px;
+    background-color: #fff;
+    max-width: 360px;
+    padding-bottom: 10px;
+}
+ul.ui-autocomplete li.ui-menu-item{
+    color: #4D4D4D;
+    list-style-type: none;
+}

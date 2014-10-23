@@ -34,6 +34,7 @@ class Photos extends Private_Controller {
 				
 			}
 			else{
+				$is_friend = $this->Profile_model->is_friend($username);
 				$my_info = json_decode($this->Profile_model->check_username($username));
 	            $friends = json_decode($this->Notification_model->friendrequest());
 	            $data = array
@@ -42,7 +43,8 @@ class Photos extends Private_Controller {
 	                    'view'      => 'profile/friend_photos', 
 	                    'count'     => count($friends),
 	                    'friends'   => $friends,
-	                    'info'      => $my_info
+	                    'info'      => $my_info,
+	                    'friend_but'=> $is_friend
 
 	                );
 	            $this->load->view('template', $data);	

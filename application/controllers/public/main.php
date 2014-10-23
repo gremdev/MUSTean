@@ -13,6 +13,9 @@ class Main extends MY_Controller {
 	{
         if ((int)$this->logged > 0)
         {
+            if (isset($_GET['search'])) {
+                header("location:".base_url().$_GET['search']);
+            }
             $my_info = json_decode($this->Profile_model->check_username($this->username));
             $friends = json_decode($this->Notification_model->friendrequest());
             $data = array

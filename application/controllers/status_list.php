@@ -63,6 +63,18 @@ class Status_list extends Private_Controller {
 	// 		echo "error";
 	// 	}
 	// }
+	// 
+	public function users()
+	{
+		$names = $this->Status_list_model->users();
+
+		$arr = array();
+		foreach ($names as $name => $test)
+		{
+			array_push($arr,$test->username);
+		}
+		echo json_encode($arr);
+	}
 
 	public function comment_gen()
 	{

@@ -52,10 +52,10 @@ $route['status_list/profile_gen/:any']	= "status_list/profile_gen";
 $route['status_list/friend_gen/:any']	= "status_list/friend_gen";
 $route['status_list/comment_gen/:any'] = "status_list/comment_gen";
 $route['status_list/comment_new/:any'] 	= "status_list/comment_new";
+$route['status_list/users']			= "status_list/users";
 
 $route['post/:num']					= "post";
 
-$route[':any/search']					= "search";
 $route[':any/edit']					= "profile/edit";
 $route[':any/friends']				= "profile/friends";
 $route[':any/messages']				= "profile/messages";

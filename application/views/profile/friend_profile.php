@@ -16,7 +16,17 @@
                 <ul class="nav hidden-xs" id="lg-menu">
                     <li><a href="<?= base_url($info->username . '/photos') ?>"><i class="glyphicon glyphicon-picture"> </i>&nbsp; Photos</a></li>
                     <li><a href="<?= base_url($info->username . '/friends') ?>"><i class="glyphicon glyphicon-user"> </i>&nbsp; Friends</a></li>
-                    <li style="margin-left:-5px;"><button class="btn btn-primary btn-block">Add Friend</button></li>
+<?php
+if (isset($friend_but->status) && $friend_but->status == 1) {
+  echo '<li style="margin-left:-5px;"><button class="btn btn-primary btn-block" id="unfriend">Unfriend</button></li>';
+}
+elseif (isset($friend_but->status) && $friend_but->status == 0) {
+  echo '<li style="margin-left:-5px;"><button class="btn btn-primary btn-block" id="cancelrequest">Cancel Request</button></li>';
+}
+else{
+  echo '<li style="margin-left:-5px;"><button class="btn btn-primary btn-block" id="addfriend">Add Friend</button></li>';
+}
+?>
                 </ul>
                 <ul class="list-unstyled hidden-xs" id="sidebar-footer">
                     <li><a href="<?= base_url() ?>"><i class="glyphicon glyphicon-arrow-left"></i> Back to Newsfeed</a></li>
@@ -48,14 +58,14 @@
                       <a href="<?= base_url() ?>" class="navbar-brand logo"><img src="<?= base_url('public/img/must-small.png') ?>" style="margin-top:-2px;margin-left:-2px;"></a>
                     </div>
                     <nav class="collapse navbar-collapse" role="navigation">
-                    <form class="navbar-form navbar-left">
-                        <div class="input-group input-group-sm">
-                          <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term" style="min-width:360px;">
-                          <div class="input-group-btn">
+                    <div class="navbar-form navbar-left">
+                        <form class="ui-widget input-group input-group-sm searching" method="GET" action="<?= base_url() ?>">
+                          <input type="text" class="form-control" name="search" placeholder="Search username" id="search" style="min-width:360px;">
+                          <!-- <div class="input-group-btn">
                             <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-                          </div>
-                        </div>
-                    </form>
+                          </div> -->
+                        </form>
+                    </div>
                     <ul class="nav navbar-nav">
                       <li>
                         <a href="<?= base_url() ?>"><i class="glyphicon glyphicon-home"></i> Home</a>
@@ -249,3 +259,4 @@ profile.controller('profileController',function($scope,$http){
 });
 
 </script>
+

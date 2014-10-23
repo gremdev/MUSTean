@@ -51,20 +51,17 @@
                       <a href="<?= base_url() ?>" class="navbar-brand logo"><img src="<?= base_url('public/img/must-small.png') ?>" style="margin-top:-2px;margin-left:-2px;"></a>
                     </div>
                     <nav class="collapse navbar-collapse" role="navigation">
-<!--                     <form class="navbar-form navbar-left">
-                        <div class="input-group input-group-sm">
-                          <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term" style="min-width:360px;">
-                          <div class="input-group-btn">
+                    <div class="navbar-form navbar-left">
+                        <form class="ui-widget input-group input-group-sm searching" method="GET" action="<?= base_url() ?>">
+                          <input type="text" class="form-control" name="search" placeholder="Search username" id="search" style="min-width:360px;">
+                          <!-- <div class="input-group-btn">
                             <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-                          </div>
-                        </div>
-                    </form> -->
+                          </div> -->
+                        </form>
+                    </div>
                     <ul class="nav navbar-nav">
                       <li>
                         <a href="<?= base_url() ?>"><i class="glyphicon glyphicon-home"></i> Home</a>
-                      </li>
-                      <li>
-                        <a href="<?= base_url('search/user') ?>"><i class="glyphicon glyphicon-search"></i> Search</a>
                       </li>
                       <li>
                         <a href="<?= base_url() ?>#postModal" role="button" data-toggle="modal"><i class="glyphicon glyphicon-plus"></i> Status</a>

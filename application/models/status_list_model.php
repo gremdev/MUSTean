@@ -142,4 +142,12 @@ class Status_list_model extends CI_Model
 		$data = array('comment' => $comment, 'post_id' => $post_id, 'date' => date("Y-m-d H:i:s"), 'user_id' => $this->id);
 		$this->db->insert('comments', $data);
 	}
+
+	public function users()
+	{
+		$users = $this->db->select('username')
+						->from('user_info')
+						->get()->result_object();
+						return $users;
+	}
 }
