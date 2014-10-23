@@ -51,17 +51,20 @@
                       <a href="<?= base_url() ?>" class="navbar-brand logo"><img src="<?= base_url('public/img/must-small.png') ?>" style="margin-top:-2px;margin-left:-2px;"></a>
                     </div>
                     <nav class="collapse navbar-collapse" role="navigation">
-                    <form class="navbar-form navbar-left">
+<!--                     <form class="navbar-form navbar-left">
                         <div class="input-group input-group-sm">
                           <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term" style="min-width:360px;">
                           <div class="input-group-btn">
                             <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
                           </div>
                         </div>
-                    </form>
+                    </form> -->
                     <ul class="nav navbar-nav">
                       <li>
                         <a href="<?= base_url() ?>"><i class="glyphicon glyphicon-home"></i> Home</a>
+                      </li>
+                      <li>
+                        <a href="<?= base_url('search/user') ?>"><i class="glyphicon glyphicon-search"></i> Search</a>
                       </li>
                       <li>
                         <a href="<?= base_url() ?>#postModal" role="button" data-toggle="modal"><i class="glyphicon glyphicon-plus"></i> Status</a>
@@ -104,32 +107,36 @@
                           <div class="col-sm-8">
 <?php
 if (isset($_GET['error_post'])) {
-  echo "<span class=\"error_post\">There's something error in your post. <a href='". base_url('#postModal') . "' role=\"button\" data-toggle=\"modal\">Please try again.</a><br/><br/></span>";
+  echo "<span class=\"error_post\">There's something wrong with your post. <a href='". base_url('#postModal') . "' role=\"button\" data-toggle=\"modal\">Please try again.</a><br/><br/></span>";
 }
 ?>
 <div ng-app="newsfeed" ng-controller="newsfeedController">
+
           <div class="panel panel-default" ng-repeat="post in posts">
-            <div class="panel-heading"><a href="#" class="pull-right">View all</a> 
+            <div class="panel-heading"><div class="pull-right" style="padding-top:13px">{{post.date_posted}}</div> 
                 <a href="<?= base_url('{{post.username}}')?>">
                     <h4><img src="<?= base_url('{{post.profile_pic}}') ?>" style="max-width=:30px;max-height:30px;"/> {{post.fullname}}</h4>
                 </a>
-                <h6>{{post.date_posted}}</h6>
             </div>
             <div class="panel-body">
-                <div ng-show="post.photo != null">
+                <div ng-show="post.photo != null" align="center">
                   <img src="/public/uploads/{{post.photo}}" style="margin-bottom:10px;max-width:618px;max-height:500px;">
                 </div>
                     {{post.body}}
                 <hr>
-              <div class="input-group">
+                <div align="center" style="margin-top:-10px;">
+                    <a href="<?= base_url('post') ?>/{{post.id}}">Discuss <i class="glyphicon glyphicon-comment"> </i></a>
+                </div>
+<!--               <div class="input-group">
                   <div class="input-group-btn">
                       <button class="btn btn-default" data-ng-click="like(post.id)">{{post.like}} <i class="glyphicon glyphicon-thumbs-up"> </i> </button>
                       <button class="btn btn-default" onclick="alert('Hello')">{{post.comment}} <i class="glyphicon glyphicon-comment"></i></button>
                   </div>
                   <input type="text" class="form-control" placeholder="Add a comment..">
-              </div>
+              </div> -->
             </div>
           </div>
+
 </div>
                           </div>
                        </div><!--/row-->
@@ -174,7 +181,7 @@ if (isset($_GET['error_post'])) {
             <button class="btn btn-primary btn-sm" type="submit">Post</button>
               <ul class="pull-left list-inline">
                   <input type="file" name="userfile" size="20" />
-                  <input type="hidden" name="base_url" value="<?= base_url() ?>"> 
+                  <input type="hidden" name="url" value="<?= current_url() ?>"> 
               </ul>
             </div>  
         </div>
@@ -210,6 +217,5 @@ if (isset($_GET['error_post'])) {
   </div>
   </div>
 </div>
-
 
 </div> <!-- end newsfeed -->

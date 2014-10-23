@@ -34,7 +34,7 @@ class Submit extends Private_Controller {
 					);
 
 				$this->Submit_model->status($post_data);
-				header("location:" . $_POST['base_url']);
+				header("location:" . $_POST['url']);
 
 			}
 			elseif ($this->upload->do_upload() && !empty($_POST['body']) == FALSE) 
@@ -50,7 +50,7 @@ class Submit extends Private_Controller {
 					);
 
 				$this->Submit_model->status($post_data);
-				header("location:" . $_POST['base_url']);
+				header("location:" . $_POST['url']);
 
 			}
 			elseif ($this->upload->do_upload() && !empty($_POST['body']) == TRUE) 
@@ -67,13 +67,13 @@ class Submit extends Private_Controller {
 					);
 
 				$this->Submit_model->status($post_data);
-				header("location:" . $_POST['base_url']);
+				header("location:" . $_POST['url']);
 
 			}
 			else
 			{
 				// empty post status/image
-				header("location:" . $_POST['base_url'] . "?error_post");
+				header("location:" . $_POST['url'] . "?error_post");
 			}
 		}
 	}

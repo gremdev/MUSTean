@@ -38,26 +38,32 @@
 |
 */
 
-$route['default_controller']    = "public/main";
+$route['default_controller']    	= "public/main";
 
-$route['login']                 = "public/login";
-$route['logout']                = "public/logout";
-$route['signup']                = "public/signup";
+$route['login']                 	= "public/login";
+$route['logout']                	= "public/logout";
+$route['signup']               		= "public/signup";
 
-$route['submit/post']			= "submit/post";
+$route['submit/post']				= "submit/post";
 
-$route['status_list/newsfeed_gen']		= "status_list/newsfeed_gen";
-$route['status_list/like/:any']				= "status_list/like";
-$route['status_list/profile_gen']		= "status_list/profile_gen";
+$route['status_list/newsfeed_gen']	= "status_list/newsfeed_gen";
+$route['status_list/like/:any']		= "status_list/like";
+$route['status_list/profile_gen/:any']	= "status_list/profile_gen";
+$route['status_list/friend_gen/:any']	= "status_list/friend_gen";
+$route['status_list/comment_gen/:any'] = "status_list/comment_gen";
+$route['status_list/comment_new/:any'] 	= "status_list/comment_new";
 
-$route[':any/edit']				= "profile/edit";
-$route[':any/friends']			= "profile/friends";
-$route[':any/messages']			= "profile/messages";
-$route[':any/photos']			= "profile/photos";
-$route[':any/:any']				= "profile/error";
-$route[':any']					= "profile/main";
+$route['post/:num']					= "post";
 
-$route['404_override'] 			= "";
+$route[':any/search']					= "search";
+$route[':any/edit']					= "profile/edit";
+$route[':any/friends']				= "profile/friends";
+$route[':any/messages']				= "profile/messages";
+$route[':any/photos']				= "profile/photos";
+$route[':any/:any']					= "profile/error";
+$route[':any']						= "profile/main";
+
+$route['404_override'] 				= "";
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

@@ -22,7 +22,7 @@
                     <li><a href="#"><i class="glyphicon glyphicon-pencil"> </i>&nbsp; New Blog Entry</a></li>
                 </ul>
                 <ul class="list-unstyled hidden-xs" id="sidebar-footer">
-                    <li><a href="<?= base_url() ?>"><i class="glyphicon glyphicon-refresh"></i> Refresh Newsfeed</a></li>
+                    <li><a href="<?= base_url() ?>"><i class="glyphicon glyphicon-arrow-left"></i> Back to Newsfeed</a></li>
                 </ul>
               
                 <!-- tiny only nav-->
@@ -96,7 +96,6 @@
               
                 <div class="padding">
                     <div class="full col-sm-9">
-                      
                         <!-- content -->                      
                         <div class="row">
                         
@@ -105,36 +104,37 @@
                           <div class="col-sm-8">
 <?php
 if (isset($_GET['error_post'])) {
-  echo "<span class=\"error_post\">There's something error in your post. <a href='". base_url('#postModal') . "' role=\"button\" data-toggle=\"modal\">Please try again.</a><br/><br/></span>";
+  echo "<span class=\"error_post\">There's something wrong with your post. <a href='". base_url('#postModal') . "' role=\"button\" data-toggle=\"modal\">Please try again.</a><br/><br/></span>";
 }
 ?>
-                               <div class="panel panel-default">
-                                 <div class="panel-heading"><a href="#" class="pull-right">View all</a> 
+<div ng-app="profile" ng-controller="profileController">
 
-                                 <a href="<?= base_url() . $this->username ?>">
-                                    <h4><img src="<?= base_url('public/img/default-avatar.jpg') ?>" style="max-width=:30px;max-height:30px;"/> Gremeir Mitz Ociones</h4>
-                                 </a>
+          <div class="panel panel-default" ng-repeat="post in posts">
+            <div class="panel-heading"><div class="pull-right" style="padding-top:13px">{{post.date_posted}}</div> 
+                <a href="<?= base_url('{{post.username}}')?>">
+                    <h4><img src="<?= base_url('{{post.profile_pic}}') ?>" style="max-width=:30px;max-height:30px;"/> {{post.fullname}}</h4>
+                </a>
+            </div>
+            <div class="panel-body">
+                <div ng-show="post.photo != null" align="center">
+                  <img src="/public/uploads/{{post.photo}}" style="margin-bottom:10px;max-width:618px;max-height:500px;">
+                </div>
+                    {{post.body}}
+                <hr>
+                <div align="center" style="margin-top:-10px;">
+                    <a href="<?= base_url('post') ?>/{{post.id}}">Discuss <i class="glyphicon glyphicon-comment"> </i></a>
+                </div>
+<!--               <div class="input-group">
+                  <div class="input-group-btn">
+                      <button class="btn btn-default" data-ng-click="like(post.id)">{{post.like}} <i class="glyphicon glyphicon-thumbs-up"> </i> </button>
+                      <button class="btn btn-default" onclick="alert('Hello')">{{post.comment}} <i class="glyphicon glyphicon-comment"></i></button>
+                  </div>
+                  <input type="text" class="form-control" placeholder="Add a comment..">
+              </div> -->
+            </div>
+          </div>
 
-                                 </div>
-                                  <div class="panel-body">
-                                  <img src="<?= base_url('public/img/must_out.JPG') ?>" style="margin-bottom:10px;max-width:618px;max-height:500px;">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                    <hr>
-                                    <div class="input-group">
-                                      <div class="input-group-btn">
-                                      <button class="btn btn-default">2 <i class="glyphicon glyphicon-thumbs-up"> </i> </button><button class="btn btn-default">3 <i class="glyphicon glyphicon-comment"></i></button>
-                                      </div>
-                                      <input type="text" class="form-control" placeholder="Add a comment..">
-                                    </div>
-                                    
-                                  </div>
-                               </div>
-
+</div>
                           </div>
                        </div><!--/row-->
                       
@@ -178,7 +178,7 @@ if (isset($_GET['error_post'])) {
             <button class="btn btn-primary btn-sm" type="submit">Post</button>
               <ul class="pull-left list-inline">
                   <input type="file" name="userfile" size="20" />
-                  <input type="hidden" name="base_url" value="<?= base_url() ?>"> 
+                  <input type="hidden" name="url" value="<?= current_url() ?>"> 
               </ul>
             </div>  
         </div>
@@ -217,3 +217,38 @@ if (isset($_GET['error_post'])) {
 
 
 </div> <!-- end newsfeed -->
+
+<script>
+  
+var profile = angular.module('profile', []);
+
+
+profile.controller('profileController',function($scope,$http){
+     var getPosts = function(){
+        $http.get('/status_list/profile_gen/<?= $this->uri->segment(1) ?>').success(function(data){
+                $scope.posts = data;
+                console.log(data);
+        }); 
+    }
+    getPosts();
+
+    $scope.like = function(id) {
+      $http({
+        method: "POST",
+        url: '/status_list/like/'+ id,
+        headers: { 'Content-Type' : 'application/x-www-form-urlencoded' },
+        data: $.param(id)
+        })
+        .success(function(data){
+          console.log(data);
+          getPosts();
+
+        })
+        .error(function(data){
+          console.log(data);
+        });
+    }
+
+});
+
+</script>

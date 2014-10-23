@@ -1,11 +1,12 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Main extends MY_Controller {
+class Main extends Private_Controller {
 
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->model('Profile_model');
+		$this->load->model('Notification_model');
+        $this->load->model('Profile_model');
 	}
 
 	public function index()
@@ -18,12 +19,33 @@ class Main extends MY_Controller {
 		}
 		else{
 			if ((int)$this->logged > 0 && $username == $this->username) {
-				// echo "<br/>allow edits here for the profile owner.";
+				$my_info = json_decode($this->Profile_model->check_username($this->username));
+	            $friends = json_decode($this->Notification_model->friendrequest());
+	            $data = array
+	                (
+	                    'title'     => 'Profile | MUSTean', 
+	                    'view'      => 'profile/main', 
+	                    'count'     => count($friends),
+	                    'friends'   => $friends,
+	                    'info'      => $my_info
+
+	                );
+	            $this->load->view('template', $data);
 				
 			}
 			else{
-				//echo $user_info;
-				// echo "View and post/comment only";	
+				$my_info = json_decode($this->Profile_model->check_username($username));
+	            $friends = json_decode($this->Notification_model->friendrequest());
+	            $data = array
+	                (
+	                    'title'     => 'Profile | MUSTean', 
+	                    'view'      => 'profile/friend_profile', 
+	                    'count'     => count($friends),
+	                    'friends'   => $friends,
+	                    'info'      => $my_info
+
+	                );
+	            $this->load->view('template', $data);	
 			}
 		}
 	}

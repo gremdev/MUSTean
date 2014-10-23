@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Photos extends Private_Controller {
+class Search extends Private_Controller {
 
 	public function __construct()
 	{

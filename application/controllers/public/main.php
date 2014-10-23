@@ -17,7 +17,7 @@ class Main extends MY_Controller {
             $friends = json_decode($this->Notification_model->friendrequest());
             $data = array
                 (
-                    'title'     => 'Welcome to MUSTean Community', 
+                    'title'     => 'Newsfeed | MUSTean', 
                     'view'      => 'newsfeed', 
                     'count'     => count($friends),
                     'friends'   => $friends,

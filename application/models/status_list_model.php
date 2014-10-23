@@ -11,8 +11,16 @@ class Status_list_model extends CI_Model
 					->where('a.user', $this->id)
 					->where('status', '1')
 					->order_by('date_posted', 'desc')
-					->limit(10)
 					->get()->result_object();
+	}
+
+	public function single_post($post_id)
+	{
+		return $this->db->select('a.id, a.body, a.date_posted, a.photo, b.username, b.fullname, b.profile_pic')
+						->from('posts as a')
+						->join('user_info as b', 'b.id = a.user_id')
+						->where('a.id', $post_id)
+						->get()->row_object();
 	}
 
 	public function like_counter($post_id)
@@ -31,9 +39,31 @@ class Status_list_model extends CI_Model
 				->get()->result_array();
 	}
 
-	public function profile()
+	public function profile($username)
 	{
+		$profile = $this->db->select('a.id, a.fullname, a.username, a.profile_pic, b.id, b.body, b.date_posted, b.photo')
+							->from('user_info as a')
+							->join('posts as b', 'b.user_id = a.id')
+							->where('a.username', $username)
+							->order_by('b.date_posted', 'desc')
+							->get()->result_object();
+					return json_encode($profile);
+	}
 
+	public function friend($username)
+	{
+		$my = $this->db->select('id')
+						   ->from('user_info')
+						   ->where('username', $username)
+						   ->get()->row_object();
+		$friends = $this->db->select('friend, username, fullname, profile_pic')
+							->from('friends')
+							->join('user_info', 'user_info.id = friend')
+							->where('user', $my->id)
+							->where('status', '1')
+							->where('friend !=', $my->id)
+							->get()->result_object();
+		return json_encode($friends);
 	}
 
 	public function check_if_liked($id)
@@ -95,5 +125,21 @@ class Status_list_model extends CI_Model
 	{
 		$this->db->delete('likes', array('post_id' => $id, 'user_id' => $this->id));
 		return "success, unliked"; 
+	}
+
+	public function getcomments($id)
+	{
+		$comments = $this->db->select('a.comment, a.notif, a.date, b.username, b.fullname, b.profile_pic')
+							 ->from('comments as a')
+							 ->join('user_info as b', 'b.id = a.user_id')
+							 ->where('a.post_id', $id)
+							 ->order_by('date', 'asc')
+							 ->get()->result_array();
+							 return json_encode($comments);
+	}
+	public function newcomment($comment, $post_id)
+	{
+		$data = array('comment' => $comment, 'post_id' => $post_id, 'date' => date("Y-m-d H:i:s"), 'user_id' => $this->id);
+		$this->db->insert('comments', $data);
 	}
 }

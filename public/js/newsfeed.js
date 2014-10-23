@@ -19,7 +19,6 @@ newsfeed.controller('newsfeedController',function($scope,$http){
 				})
 				.success(function(data){
 					console.log(data);
-
 					getPosts();
 
 				})

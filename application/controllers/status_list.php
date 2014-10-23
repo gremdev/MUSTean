@@ -32,28 +32,48 @@ class Status_list extends Private_Controller {
 		echo json_encode($postArray);
 	}
 
-	public function profile_gen($username = FALSE)
+	public function profile_gen()
 	{
-
+		$profile = $this->Status_list_model->profile($this->uri->segment(3));
+		echo $profile;
 	}
 
-	public function like()
+	public function friend_gen()
 	{
-		$check = $this->Status_list_model->check_if_liked($this->uri->segment(3));
+		$friend = $this->Status_list_model->friend($this->uri->segment(3));
+		echo $friend;
+	}
 
-		if ($check == 0)
-		{
-			$like = $this->Status_list_model->like($this->uri->segment(3));
-			var_dump($like);
-		}
-		elseif($check > 0)
-		{
-			$unlike = $this->Status_list_model->unlike($this->uri->segment(3));
-			echo $unlike;
-		}
-		else
-		{
-			echo "error";
+	// public function like()
+	// {
+	// 	$check = $this->Status_list_model->check_if_liked($this->uri->segment(3));
+
+	// 	if ($check == 0)
+	// 	{
+	// 		$like = $this->Status_list_model->like($this->uri->segment(3));
+	// 		var_dump($like);
+	// 	}
+	// 	elseif($check > 0)
+	// 	{
+	// 		$unlike = $this->Status_list_model->unlike($this->uri->segment(3));
+	// 		echo $unlike;
+	// 	}
+	// 	else
+	// 	{
+	// 		echo "error";
+	// 	}
+	// }
+
+	public function comment_gen()
+	{
+		$comment = $this->Status_list_model->getcomments($this->uri->segment(3));
+		echo $comment;
+	}
+
+	public function comment_new()
+	{
+		if (!empty(implode("", $_POST)) == true) {
+			$this->Status_list_model->newcomment(implode("", $_POST), $this->uri->segment(3));
 		}
 	}
 
