@@ -16,7 +16,7 @@
                 <ul class="nav hidden-xs" id="lg-menu">
                     <li><a href="<?= base_url($this->username . '/edit'); ?>"><i class="glyphicon glyphicon-edit"> </i>&nbsp; Edit Profile</a></li>
                     <li class="active"><a href="<?= base_url() ?>"><i class="glyphicon glyphicon-list-alt"> </i>&nbsp; Newsfeed</a></li>
-                    <li><a href="<?= base_url($this->username . '/messages') ?>"><i class="glyphicon glyphicon-comment"> </i>&nbsp; Messages</a></li>
+                    <li><a href="<?= base_url('messages') ?>"><i class="glyphicon glyphicon-comment"> </i>&nbsp; Messages</a></li>
                     <li><a href="<?= base_url($this->username . '/photos') ?>"><i class="glyphicon glyphicon-picture"> </i>&nbsp; Photos</a></li>
                     <li><a href="<?= base_url($this->username . '/friends') ?>"><i class="glyphicon glyphicon-user"> </i>&nbsp; Friends</a></li>
                     <li><a href="#"><i class="glyphicon glyphicon-pencil"> </i>&nbsp; New Blog Entry</a></li>
@@ -106,7 +106,7 @@ if (isset($_GET['error_post'])) {
                     <h4><img src="<?= base_url($post->profile_pic) ?>" style="max-width=:30px;max-height:30px;"/> <?= $post->fullname ?></h4>
                 </a>
             </div>
-            <form ng-submit="signup()" method="POST">
+            <form method="POST">
             <div class="panel-body">
             <?php if(!empty($post->photo) == true) { ?>
                 <div align="center">

@@ -23,7 +23,7 @@ class Friends extends Private_Controller {
 	            $friends = json_decode($this->Notification_model->friendrequest());
 	            $data = array
 	                (
-	                    'title'     => 'Profile | MUSTean', 
+	                    'title'     => 'Friends | MUSTean', 
 	                    'view'      => 'profile/friends', 
 	                    'count'     => count($friends),
 	                    'friends'   => $friends,
@@ -39,12 +39,12 @@ class Friends extends Private_Controller {
 	            $friends = json_decode($this->Notification_model->friendrequest());
 	            $data = array
 	                (
-	                    'title'     => 'Profile | MUSTean', 
+	                    'title'     => 'Friends | MUSTean', 
 	                    'view'      => 'profile/friend_friends', 
 	                    'count'     => count($friends),
 	                    'friends'   => $friends,
 	                    'info'      => $my_info,
-	                    'friend_but'=> $is_friend
+	                    'is_friend'=> $is_friend
 
 	                );
 	            $this->load->view('template', $data);	

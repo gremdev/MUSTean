@@ -109,27 +109,38 @@ if (isset($_GET['error_post'])) {
 ?>
 
 
-<div ng-app="friend" ng-controller="friendController">
+<div ng-app="pm" ng-controller="pmController">
 
           <div class="panel panel-default">
             <div class="panel-heading">
-            <div class="pull-left">
-                <h4>Friends</h4>
-              </div>
+              <div class="pull-left">
+                <h4><a href="<?= base_url($user_info->username) ?>"><?= $user_info->fullname ?></a></h4>
+              </div> 
                 <a href="<?= base_url('messages')?>">
                     <h4 align="right">Inbox</h4>
                 </a>
             </div>
-            <div class="panel-body" align="left" ng-repeat="post in posts">
-                <a href="<?= base_url('messages/{{post.username}}') ?>">
-                  <img src="<?= base_url() ?>{{post.profile_pic}}" style="margin-bottom:10px;max-width:30px;max-height:30px;">
-                  {{post.fullname}}
-                </a>
-            </div>
+          <form method="POST">
+          <div class="panel-body">
+              <div ng-repeat="pm in pms">
+                  <a href="<?= base_url() ?>{{pm.username}}">
+                  <img src="<?= base_url('{{pm.profile_pic}}') ?>" style="max-width=:30px;max-height:30px;"/>
+                  {{pm.fullname}}
+                  </a><br/><span class="badge" style="font-size:10px;margin-right:20px;">{{pm.date}}</span>
+                  {{pm.message}}<br/><br/>
+              </div><br/><br/>
+              <div class="input-group">
+                    <input type="text" id="pm" class="form-control" placeholder="Write a message" name="message" ng-model="comm.pm">
+                    <div class="input-group-btn">
+                        <button class="btn btn-default" data-ng-click="newpm()">POST</button>
+                    </div>
+              </div>
+          </div>
+          </form>
+
           </div>
 
 </div>
-
                    </div>
                        </div><!--/row-->
                       
@@ -214,30 +225,30 @@ if (isset($_GET['error_post'])) {
 </div> <!-- end newsfeed -->
 
 <script>
-  
-var friend = angular.module('friend', []);
+
+var pm = angular.module('pm', []);
 
 
-friend.controller('friendController',function($scope,$http){
-     var getPosts = function(){
-        $http.get('/status_list/friend_gen/<?= $this->username; ?>').success(function(data){
-                $scope.posts = data;
+pm.controller('pmController',function($scope,$http){
+     var getpms = function(){
+        $http.get('/status_list/pm_gen/<?= $message->id ?>').success(function(data){
+                $scope.pms = data;
                 console.log(data);
         }); 
     }
-    getPosts();
+    getpms();
 
-    $scope.like = function(id) {
+    $scope.newpm = function() {
       $http({
         method: "POST",
-        url: '/status_list/like/'+ id,
+        url: '/status_list/pm_new/<?= $message->id ?>',
         headers: { 'Content-Type' : 'application/x-www-form-urlencoded' },
-        data: $.param(id)
+        data: $.param($scope.comm.pm)
         })
         .success(function(data){
+          $('#pm').val('');
           console.log(data);
-          getPosts();
-
+          getpms();
         })
         .error(function(data){
           console.log(data);

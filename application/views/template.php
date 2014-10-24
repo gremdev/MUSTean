@@ -77,7 +77,6 @@ else{
             $.post("/cancel_or_unfriend/<?= $this->uri->segment(1) ?>",
               function(data,status){
                 if (data == 'ok') {
-                  alert(data +  "unfriend");
                   $('#unfriend').hide();
                   $('#addfriend').show();
                   $('#cancelrequest').hide();
@@ -89,7 +88,6 @@ else{
             $.post("/accept/<?= $this->uri->segment(1) ?>",
               function(data,status){
                 if (data == 'ok') {
-                  alert(data +  "accept");
                   $('#unfriend').show();
                   $('#addfriend').hide();
                   $('#cancelrequest').hide();

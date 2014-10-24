@@ -31,4 +31,15 @@ class Profile_model extends CI_Model {
 
 	}
 
+	public function getmessageid($friend)
+	{
+		$message_id = $this->db->select('id')->from('convo')->where('user', $this->id)->where('friend', $friend)->get()->row_object();
+		if (!empty($message_id->id) == true) {
+			return $message_id;
+		}
+		else{
+			return $this->db->select('id')->from('convo')->where('user', $friend)->where('friend', $this->id)->get()->row_object();
+		}
+	}
+
 }

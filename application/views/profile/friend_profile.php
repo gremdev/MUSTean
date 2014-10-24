@@ -16,6 +16,7 @@
                 <ul class="nav hidden-xs" id="lg-menu">
                     <li><a href="<?= base_url($info->username . '/photos') ?>"><i class="glyphicon glyphicon-picture"> </i>&nbsp; Photos</a></li>
                     <li><a href="<?= base_url($info->username . '/friends') ?>"><i class="glyphicon glyphicon-user"> </i>&nbsp; Friends</a></li>
+                    <li><a href="<?= base_url('messages/'.$info->username) ?>"><i class="glyphicon glyphicon-user"> </i>&nbsp; Message</a></li>
 <li style="margin-left:-5px;"><button class="btn btn-primary btn-block" id="unfriend">Unfriend</button></li>
 <li style="margin-left:-5px;"><button class="btn btn-primary btn-block" id="cancelrequest">Cancel Request</button></li>
 <li style="margin-left:-5px;"><button class="btn btn-primary btn-block" id="addfriend">Add Friend</button></li>

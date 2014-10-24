@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Oct 23, 2014 at 12:48 PM
+-- Generation Time: Oct 25, 2014 at 04:15 AM
 -- Server version: 5.5.40-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.4
 
@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `comments` (
   `notif` int(11) NOT NULL DEFAULT '0',
   `date` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=32 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=41 ;
 
 --
 -- Dumping data for table `comments`
@@ -49,7 +49,40 @@ INSERT INTO `comments` (`id`, `comment`, `post_id`, `user_id`, `notif`, `date`) 
 (28, 'test', 10010, 1000001, 0, '2014-10-23 03:26:12'),
 (29, '@#DS#$%', 10016, 1000006, 0, '2014-10-23 05:04:30'),
 (30, 'alert(''Hello'')', 10016, 1000006, 0, '2014-10-23 05:04:43'),
-(31, 'unta', 10015, 1000001, 0, '2014-10-23 09:32:02');
+(31, 'unta', 10015, 1000001, 0, '2014-10-23 09:32:02'),
+(32, 'Hi je..', 10019, 1000010, 0, '2014-10-24 22:53:33'),
+(33, 'pangit', 10020, 1000001, 0, '2014-10-24 22:54:15'),
+(34, 'Welcome to MUSTean :D', 10019, 1000001, 0, '2014-10-25 00:13:37'),
+(35, 'hgh', 10014, 1000001, 0, '2014-10-25 00:20:08'),
+(36, 'jhj', 10014, 1000001, 0, '2014-10-25 02:36:58'),
+(37, 'jghj', 10014, 1000001, 0, '2014-10-25 02:37:23'),
+(38, 'hjgh', 10014, 1000001, 0, '2014-10-25 02:58:50'),
+(39, 'jhgj', 10014, 1000001, 0, '2014-10-25 03:11:29'),
+(40, 'jhkj', 100000, 1000001, 0, '2014-10-25 03:54:34');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `convo`
+--
+
+CREATE TABLE IF NOT EXISTS `convo` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user` int(11) NOT NULL,
+  `friend` int(11) NOT NULL,
+  `notif_1` int(11) NOT NULL DEFAULT '0',
+  `notif_2` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=100003 ;
+
+--
+-- Dumping data for table `convo`
+--
+
+INSERT INTO `convo` (`id`, `user`, `friend`, `notif_1`, `notif_2`) VALUES
+(100000, 1000001, 1000005, 0, 0),
+(100001, 1000001, 1000009, 0, 0),
+(100002, 1000001, 1000010, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -61,9 +94,9 @@ CREATE TABLE IF NOT EXISTS `friends` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user` int(11) NOT NULL,
   `friend` int(11) NOT NULL,
-  `status` int(11) NOT NULL,
+  `status` int(11) NOT NULL DEFAULT '2',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=22 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=65 ;
 
 --
 -- Dumping data for table `friends`
@@ -72,11 +105,23 @@ CREATE TABLE IF NOT EXISTS `friends` (
 INSERT INTO `friends` (`id`, `user`, `friend`, `status`) VALUES
 (1, 1000001, 1000001, 1),
 (2, 1000005, 1000005, 1),
-(17, 1000001, 1000005, 1),
-(18, 1000005, 1000001, 1),
-(19, 1000006, 1000006, 1),
-(20, 1000007, 1000007, 1),
-(21, 1000008, 1000008, 1);
+(22, 1000009, 1000009, 1),
+(23, 1000010, 1000010, 1),
+(24, 1000011, 1000011, 1),
+(31, 1000010, 1000005, 2),
+(32, 1000005, 1000010, 3),
+(53, 1000005, 1000001, 1),
+(54, 1000001, 1000005, 1),
+(55, 1000005, 1000011, 2),
+(56, 1000011, 1000005, 3),
+(57, 1000010, 1000001, 1),
+(58, 1000001, 1000010, 1),
+(59, 1000010, 1000011, 2),
+(60, 1000011, 1000010, 3),
+(61, 1000009, 1000011, 2),
+(62, 1000011, 1000009, 3),
+(63, 1000009, 1000001, 1),
+(64, 1000001, 1000009, 1);
 
 -- --------------------------------------------------------
 
@@ -106,6 +151,34 @@ INSERT INTO `likes` (`id`, `post_id`, `user_id`, `notif`, `date`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `messages`
+--
+
+CREATE TABLE IF NOT EXISTS `messages` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user` int(11) DEFAULT NULL,
+  `friend` int(11) DEFAULT NULL,
+  `message` text NOT NULL,
+  `date` datetime NOT NULL,
+  `convo_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10006 ;
+
+--
+-- Dumping data for table `messages`
+--
+
+INSERT INTO `messages` (`id`, `user`, `friend`, `message`, `date`, `convo_id`) VALUES
+(10000, NULL, 1000005, 'Hi ...', '2014-10-25 03:43:43', 100000),
+(10001, 1000001, NULL, 'Hello!', '2014-10-25 03:49:40', 100000),
+(10002, 1000001, NULL, 'mo gana unta Lord..', '2014-10-25 04:04:58', 100000),
+(10003, NULL, 1000005, 'yes! ni-gana sya!', '2014-10-25 04:07:12', 100000),
+(10004, 1000001, NULL, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', '2014-10-25 04:11:47', 100000),
+(10005, 1000001, NULL, 'Hi Je .', '2014-10-25 04:14:06', 100001);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `mustean_sessions`
 --
 
@@ -124,7 +197,8 @@ CREATE TABLE IF NOT EXISTS `mustean_sessions` (
 --
 
 INSERT INTO `mustean_sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
-('cc50a73f1d0423d068ba760f77169f0c', '127.0.0.1', 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.104 Safari/537.36', 1414039558, 'a:4:{s:9:"user_data";s:0:"";s:8:"username";s:7:"gremdev";s:2:"id";s:7:"1000001";s:9:"logged_in";b:1;}');
+('13b7237f47dad39fd76d450a451d934b', '127.0.0.1', 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.104 Safari/537.36', 1414181417, 'a:4:{s:9:"user_data";s:0:"";s:8:"username";s:7:"gremdev";s:2:"id";s:7:"1000001";s:9:"logged_in";b:1;}'),
+('961431d57796e6e97d7b00d03f295fd3', '127.0.0.1', 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.104 Safari/537.36', 1414181202, 'a:4:{s:9:"user_data";s:0:"";s:8:"username";s:5:"kakat";s:2:"id";s:7:"1000005";s:9:"logged_in";b:1;}');
 
 -- --------------------------------------------------------
 
@@ -139,7 +213,7 @@ CREATE TABLE IF NOT EXISTS `posts` (
   `photo` varchar(50) DEFAULT NULL,
   `user_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10017 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10021 ;
 
 --
 -- Dumping data for table `posts`
@@ -160,7 +234,10 @@ INSERT INTO `posts` (`id`, `body`, `date_posted`, `photo`, `user_id`) VALUES
 (10013, NULL, '2014-10-23 03:08:43', '09ec208fdb7939a9582f9bc957e687a5.png', 1000001),
 (10014, 'Yahhhhhhooooooooo. Taas2 na ang progress..', '2014-10-23 03:26:46', NULL, 1000001),
 (10015, 'Gamay2 nlang !!!! Kaya lge ni..', '2014-10-23 04:04:40', NULL, 1000005),
-(10016, 'Hello! From ricky...', '2014-10-23 05:03:56', 'e901d847fbb148ee2379b1abcaf91de8.png', 1000006);
+(10016, 'Hello! From ricky...', '2014-10-23 05:03:56', 'e901d847fbb148ee2379b1abcaf91de8.png', 1000006),
+(10018, 'Hi! from Jessa ....', '2014-10-24 22:31:02', NULL, 1000007),
+(10019, 'Hi from JESSA!', '2014-10-24 22:39:10', NULL, 1000009),
+(10020, 'Post from Ricky..', '2014-10-24 22:52:38', '1fbfab86ef2e2d9899eb9ea623b55249.png', 1000010);
 
 -- --------------------------------------------------------
 
@@ -172,7 +249,7 @@ CREATE TABLE IF NOT EXISTS `reserve` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `reserve_word` varchar(32) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=15 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=19 ;
 
 --
 -- Dumping data for table `reserve`
@@ -192,7 +269,11 @@ INSERT INTO `reserve` (`id`, `reserve_word`) VALUES
 (11, 'newsfeed'),
 (12, 'search'),
 (13, 'blog'),
-(14, 'submit');
+(14, 'submit'),
+(15, 'addfriend'),
+(16, 'cancel'),
+(17, 'unfriend'),
+(18, 'user_guide');
 
 -- --------------------------------------------------------
 
@@ -213,7 +294,7 @@ CREATE TABLE IF NOT EXISTS `user_info` (
   `course` varchar(255) DEFAULT NULL,
   `year` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1000009 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1000012 ;
 
 --
 -- Dumping data for table `user_info`
@@ -222,9 +303,9 @@ CREATE TABLE IF NOT EXISTS `user_info` (
 INSERT INTO `user_info` (`id`, `username`, `password`, `email`, `fullname`, `address`, `birthday`, `about`, `profile_pic`, `course`, `year`) VALUES
 (1000001, 'gremdev', '81dc9bdb52d04dc20036dbd8313ed055', 'grem.ociones@gmail.com', 'Gremeir Mitz Ociones', '#32 Zone 8 Cugman, Cagayan de Oro City', '1994-12-14', NULL, 'public/uploads/4314ca1f9341eb91f49ad98aa6771d2a.png', NULL, NULL),
 (1000005, 'kakat', '81dc9bdb52d04dc20036dbd8313ed055', 'kakat.downy@gmail.com', 'kathlyn huavas', 'bugo, cdo', '1995-04-12', NULL, 'public/img/default-avatar.jpg', NULL, NULL),
-(1000006, 'ricky', '81dc9bdb52d04dc20036dbd8313ed055', 'ricky.pantuan@gmail.com', 'ricky pantuan', 'bugo, cdo', '2312-12-13', NULL, 'public/img/default-avatar.jpg', NULL, NULL),
-(1000007, 'jessa', '81dc9bdb52d04dc20036dbd8313ed055', 'jessa.vasallo@gmail.com', 'jessa mae vasallo', 'bugo, cdo', '5452-12-31', NULL, 'public/img/default-avatar.jpg', NULL, NULL),
-(1000008, 'vanbautista', '81dc9bdb52d04dc20036dbd8313ed055', 'van.bautista@gmail.com', 'van bautista', 'cagayan de oro', '1990-02-12', NULL, 'public/img/default-avatar.jpg', NULL, NULL);
+(1000009, 'jessa', '81dc9bdb52d04dc20036dbd8313ed055', 'jessa.vasallo@gmail.com', 'Jessa Mae Vasallo', 'bugo, cdo', '1994-12-14', NULL, 'public/img/default-avatar.jpg', NULL, NULL),
+(1000010, 'ricky', '81dc9bdb52d04dc20036dbd8313ed055', 'ricky.pantuan@gmail.com', 'ricky pantuan', 'bugo, cdo', '1994-12-14', NULL, 'public/img/default-avatar.jpg', NULL, NULL),
+(1000011, 'vanbautista', '81dc9bdb52d04dc20036dbd8313ed055', 'van.bautista@gmail.com', 'van bautista', 'cagayan de oro', '1994-12-14', NULL, 'public/img/default-avatar.jpg', NULL, NULL);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

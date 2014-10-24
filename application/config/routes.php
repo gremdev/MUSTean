@@ -60,9 +60,14 @@ $route['addfriend/:any']				= "profile/friend_button/addfriend";
 $route['cancel_or_unfriend/:any']		= "profile/friend_button/cancel_or_unfriend";
 $route['accept/:any']					= "profile/friend_button/accept";
 
+$route['messages']						= "profile/messages/index";
+$route['messages/:any']					= "profile/messages/inbox";
+
+$route['status_list/pm_gen/:any']		= "status_list/pm_gen";
+$route['status_list/pm_new/:any']		= "status_list/pm_new";
+
 $route[':any/edit']						= "profile/edit";
 $route[':any/friends']					= "profile/friends";
-$route[':any/messages']					= "profile/messages";
 $route[':any/photos']					= "profile/photos";
 $route[':any/:any']						= "profile/error";
 $route[':any']							= "profile/main";

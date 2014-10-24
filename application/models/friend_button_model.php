@@ -26,6 +26,7 @@ class Friend_button_model extends CI_Model {
 
 			$this->db->update('friends', array('status' => '1'), array('user' => $this->id, 'friend' => $id->id));
 			$this->db->update('friends', array('status' => '1'), array('user' => $id->id, 'friend' => $this->id));
+			$this->db->insert('convo', array('user' => $this->id, 'friend' => $id->id));
 			return "ok";
 	}
 }

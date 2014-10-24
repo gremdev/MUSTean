@@ -23,7 +23,7 @@ class Photos extends Private_Controller {
 	            $friends = json_decode($this->Notification_model->friendrequest());
 	            $data = array
 	                (
-	                    'title'     => 'Profile | MUSTean', 
+	                    'title'     => 'Photos | MUSTean', 
 	                    'view'      => 'profile/photos', 
 	                    'count'     => count($friends),
 	                    'friends'   => $friends,
@@ -39,12 +39,12 @@ class Photos extends Private_Controller {
 	            $friends = json_decode($this->Notification_model->friendrequest());
 	            $data = array
 	                (
-	                    'title'     => 'Profile | MUSTean', 
+	                    'title'     => 'Photos | MUSTean', 
 	                    'view'      => 'profile/friend_photos', 
 	                    'count'     => count($friends),
 	                    'friends'   => $friends,
 	                    'info'      => $my_info,
-	                    'friend_but'=> $is_friend
+	                    'is_friend'=> $is_friend
 
 	                );
 	            $this->load->view('template', $data);	

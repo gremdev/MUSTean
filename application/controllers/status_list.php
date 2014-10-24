@@ -89,4 +89,17 @@ class Status_list extends Private_Controller {
 		}
 	}
 
+	public function pm_gen()
+	{
+		$pm = $this->Status_list_model->getpms($this->uri->segment(3));
+		echo $pm;
+	}
+
+	public function pm_new()
+	{
+		if (!empty(implode("", $_POST)) == true) {
+			echo $this->Status_list_model->newpm(implode("", $_POST), $this->uri->segment(3));
+		}
+	}
+
 }
