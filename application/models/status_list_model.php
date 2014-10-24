@@ -151,18 +151,30 @@ class Status_list_model extends CI_Model
 							->where('convo_id', $message_id)
 							->order_by('date', 'ASC')
 							->get()->result_object();
-
-			return json_encode($msg_data);
+		$test = $this->db->select('id')->from('convo')->where('user', $this->id)->get()->row_object();
+		if (!empty($test->id) == true) {
+			$this->db->where('id', $message_id);
+			$this->db->update('convo', array('notif_1' => '0'));
+		}
+		else{
+			$this->db->where('id', $message_id);
+			$this->db->update('convo', array('notif_2' => '0'));
+		}
+		return json_encode($msg_data);
 	}
 
 	public function newpm($pm, $message_id)
 	{
 		$test = $this->db->select('id')->from('convo')->where('user', $this->id)->get()->row_object();
 		if (!empty($test->id) == true) {
-			$this->db->insert('messages', array('user' => $this->id, 'message' => $pm, 'date' => date("Y-m-d H:i:s"), 'convo_id' => $message_id));	
+			$this->db->insert('messages', array('user' => $this->id, 'message' => $pm, 'date' => date("Y-m-d H:i:s"), 'convo_id' => $message_id));
+			$this->db->where('id', $message_id);
+			$this->db->update('convo', array('notif_1' => '1'));	
 		}
 		else{
 			$this->db->insert('messages', array('friend' => $this->id, 'message' => $pm, 'date' => date("Y-m-d H:i:s"), 'convo_id' => $message_id));
+			$this->db->where('id', $message_id);
+			$this->db->update('convo', array('notif_2' => '1'));
 		}
 	}
 

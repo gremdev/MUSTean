@@ -21,12 +21,14 @@ class Main extends Private_Controller {
 			if ((int)$this->logged > 0 && $username == $this->username) {
 				$my_info = json_decode($this->Profile_model->check_username($this->username));
 	            $friends = json_decode($this->Notification_model->friendrequest());
+            	$personal_msg = json_decode($this->Notification_model->personal_msg());
 	            $data = array
 	                (
 	                    'title'     => 'Profile | MUSTean', 
 	                    'view'      => 'profile/main', 
 	                    'count'     => count($friends),
 	                    'friends'   => $friends,
+                    'pm_msg'    => $personal_msg,
 	                    'info'      => $my_info
 
 	                );
@@ -37,12 +39,14 @@ class Main extends Private_Controller {
 				$is_friend = $this->Profile_model->is_friend($username);
 				$my_info = json_decode($this->Profile_model->check_username($username));
 	            $friends = json_decode($this->Notification_model->friendrequest());
+            	$personal_msg = json_decode($this->Notification_model->personal_msg());
 	            $data = array
 	                (
 	                    'title'     => 'Profile | MUSTean', 
 	                    'view'      => 'profile/friend_profile', 
 	                    'count'     => count($friends),
 	                    'friends'   => $friends,
+                    'pm_msg'    => $personal_msg,
 	                    'info'      => $my_info,
 	                    'is_friend'=> $is_friend
 

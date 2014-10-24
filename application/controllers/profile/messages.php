@@ -13,12 +13,14 @@ class Messages extends Private_Controller {
 	{
 		$my_info = json_decode($this->Profile_model->check_username($this->username));
 	    $friends = json_decode($this->Notification_model->friendrequest());
+            $personal_msg = json_decode($this->Notification_model->personal_msg());
 
 		$data = array(
 	        'title'     => 'Message | MUSTean', 
 	        'view'      => 'profile/messages', 
 	        'count'     => count($friends),
 	        'friends'   => $friends,
+            'pm_msg'    => $personal_msg,
 	        'info'      => $my_info
 	    );
 	    $this->load->view('template', $data);
@@ -35,6 +37,7 @@ class Messages extends Private_Controller {
 			$my_info = json_decode($this->Profile_model->check_username($this->username));
 		    $friends = json_decode($this->Notification_model->friendrequest());
 		    $message = $this->Profile_model->getmessageid($user_info->id);
+            $personal_msg = json_decode($this->Notification_model->personal_msg());
 
 			$data = array(
 		        'title'     => 'Message | MUSTean', 
@@ -42,6 +45,7 @@ class Messages extends Private_Controller {
 		        'count'     => count($friends),
 		        'friends'   => $friends,
 		        'info'      => $my_info,
+                'pm_msg'    => $personal_msg,
 		        'user_info'	=> $user_info,
 		        'message'	=> $message
 		    );

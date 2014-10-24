@@ -18,12 +18,14 @@ class Main extends MY_Controller {
             }
             $my_info = json_decode($this->Profile_model->check_username($this->username));
             $friends = json_decode($this->Notification_model->friendrequest());
+            $personal_msg = json_decode($this->Notification_model->personal_msg());
             $data = array
                 (
                     'title'     => 'Newsfeed | MUSTean', 
                     'view'      => 'newsfeed', 
                     'count'     => count($friends),
                     'friends'   => $friends,
+                    'pm_msg'    => $personal_msg,
                     'info'      => $my_info
 
                 );

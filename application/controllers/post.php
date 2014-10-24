@@ -14,7 +14,8 @@ class Post extends Private_Controller {
 	{
 		$post = $this->Status_list_model->single_post($this->uri->segment(2));
 		$my_info = json_decode($this->Profile_model->check_username($this->username));
-        $friends = json_decode($this->Notification_model->friendrequest());
+            $friends = json_decode($this->Notification_model->friendrequest());
+            $personal_msg = json_decode($this->Notification_model->personal_msg());
         $data = array
             (
                 'title'     => 'Post | MUSTean', 
@@ -23,6 +24,7 @@ class Post extends Private_Controller {
                 'friends'   => $friends,
                 'info'      => $my_info,
                 'post'		=> $post,
+                'pm_msg'    => $personal_msg,
                 'post_id'   => $this->uri->segment(2)
             );
         $this->load->view('template', $data);

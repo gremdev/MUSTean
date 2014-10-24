@@ -75,7 +75,10 @@
                         } ?></span></a>
                       </li>
                       <li>
-                        <a href="#messageModal" role="button" data-toggle="modal"><i class="glyphicon glyphicon-comment"></i> &nbsp;<span class="label label-danger"> +35</span></a>
+                        <a href="#messageModal" role="button" data-toggle="modal"><i class="glyphicon glyphicon-comment"></i> &nbsp;
+                        <?php if (count($pm_msg) > 0){
+                          echo"<span class=\"label label-danger\">&nbsp;</span>";
+                          }?></a>
                       </li>
                       <li>
                         <a href="#notifModal" role="button" data-toggle="modal"><i class="glyphicon glyphicon-globe"></i> &nbsp;<span class="label label-danger"> +35</span></a>
@@ -130,7 +133,7 @@ if (isset($_GET['error_post'])) {
                   {{pm.message}}<br/><br/>
               </div><br/><br/>
               <div class="input-group">
-                    <input type="text" id="pm" class="form-control" placeholder="Write a message" name="message" ng-model="comm.pm">
+                    <input type="text" id="pm" class="form-control" placeholder="Write a message" name="message" ng-model="comm.pmm">
                     <div class="input-group-btn">
                         <button class="btn btn-default" data-ng-click="newpm()">POST</button>
                     </div>
@@ -211,7 +214,40 @@ if (isset($_GET['error_post'])) {
     <button class="btn btn-primary">Accept</button>
     <button class="btn btn-danger">Deny</button><br/>
   </h4>
-<?php } ?>
+<?php } 
+if (count($pm_msg) == 0) {
+  echo "No new friend request found.";
+}
+?>
+            </div>
+          
+      </div>
+      <div class="modal-footer">  
+      </div>
+  </div>
+  </div>
+</div>
+
+<!--message modal-->
+<div id="messageModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+  <div class="modal-content">
+      <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+      New Message From:
+      </div>
+      <div class="modal-body">
+          
+            <div class="form-group" align="center"><br/>
+<?php foreach ($pm_msg as $pmg) { ?>
+  <h4>
+    <a href="<?= base_url('messages/'.$pmg->username) ?>"><?= $pmg->fullname ?></a>
+  </h4>
+<?php } 
+if (count($pm_msg) == 0) {
+  echo "No new message found.";
+}
+?>
             </div>
           
       </div>
@@ -243,7 +279,7 @@ pm.controller('pmController',function($scope,$http){
         method: "POST",
         url: '/status_list/pm_new/<?= $message->id ?>',
         headers: { 'Content-Type' : 'application/x-www-form-urlencoded' },
-        data: $.param($scope.comm.pm)
+        data: $.param($scope.comm.pmm)
         })
         .success(function(data){
           $('#pm').val('');

@@ -13,4 +13,26 @@ class Notification_model extends CI_Model
 
 		return json_encode($request);
 	}
+
+	public function personal_msg()
+	{
+		$pm = $this->db->select('username, fullname')
+					->from('convo')
+					->join('user_info', 'user_info.id = friend')
+					->where('user', $this->id)
+					->where('notif_1', '1')
+					->get()->result_object();
+		if (!empty($pm) == true) {
+			return json_encode($pm);
+		}
+		else{
+			$pm = $this->db->select('username, fullname')
+					->from('convo')
+					->join('user_info', 'user_info.id = user')
+					->where('friend', $this->id)
+					->where('notif_2', '1')
+					->get()->result_object();
+			return json_encode($pm);
+		}
+	}
 }
