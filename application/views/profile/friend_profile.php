@@ -16,17 +16,10 @@
                 <ul class="nav hidden-xs" id="lg-menu">
                     <li><a href="<?= base_url($info->username . '/photos') ?>"><i class="glyphicon glyphicon-picture"> </i>&nbsp; Photos</a></li>
                     <li><a href="<?= base_url($info->username . '/friends') ?>"><i class="glyphicon glyphicon-user"> </i>&nbsp; Friends</a></li>
-<?php
-if (isset($friend_but->status) && $friend_but->status == 1) {
-  echo '<li style="margin-left:-5px;"><button class="btn btn-primary btn-block" id="unfriend">Unfriend</button></li>';
-}
-elseif (isset($friend_but->status) && $friend_but->status == 0) {
-  echo '<li style="margin-left:-5px;"><button class="btn btn-primary btn-block" id="cancelrequest">Cancel Request</button></li>';
-}
-else{
-  echo '<li style="margin-left:-5px;"><button class="btn btn-primary btn-block" id="addfriend">Add Friend</button></li>';
-}
-?>
+<li style="margin-left:-5px;"><button class="btn btn-primary btn-block" id="unfriend">Unfriend</button></li>
+<li style="margin-left:-5px;"><button class="btn btn-primary btn-block" id="cancelrequest">Cancel Request</button></li>
+<li style="margin-left:-5px;"><button class="btn btn-primary btn-block" id="addfriend">Add Friend</button></li>
+<li style="margin-left:-5px;"><button class="btn btn-primary btn-block" id="accept">Accept Request</button></li>
                 </ul>
                 <ul class="list-unstyled hidden-xs" id="sidebar-footer">
                     <li><a href="<?= base_url() ?>"><i class="glyphicon glyphicon-arrow-left"></i> Back to Newsfeed</a></li>

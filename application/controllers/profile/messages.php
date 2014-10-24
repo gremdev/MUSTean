@@ -5,6 +5,7 @@ class Messages extends Private_Controller {
 	public function __construct()
 	{
 		parent::__construct();
+		$this->load->model('Notification_model');
 		$this->load->model('Profile_model');
 	}
 
@@ -14,7 +15,19 @@ class Messages extends Private_Controller {
 
 		if ($this->username == $username)
 		{
-			echo "Messages";
+				$my_info = json_decode($this->Profile_model->check_username($this->username));
+	            $friends = json_decode($this->Notification_model->friendrequest());
+	            $data = array
+	                (
+	                    'title'     => 'Message | MUSTean', 
+	                    'view'      => 'profile/messages', 
+	                    'count'     => count($friends),
+	                    'friends'   => $friends,
+	                    'info'      => $my_info
+
+	                );
+	            $this->load->view('template', $data);
+				
 		}
 		else
 		{

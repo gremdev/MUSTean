@@ -17,11 +17,17 @@ class Profile_model extends CI_Model {
 						->from('user_info')
 						->where('username', $username)
 						->get()->row_object();
-		return $this->db->select('status, id')
+		$friend_stat = $this->db->select('status')
 					->from('friends')
 					->where('user', $this->id)
 					->where('friend', $my_id->id)
 					->get()->row_object();
+		if ($friend_stat == NULL) {
+			return "0";
+		}
+		else{
+			return $friend_stat->status;
+		}
 
 	}
 

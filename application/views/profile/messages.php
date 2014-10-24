@@ -22,9 +22,17 @@
                     <li><a href="#"><i class="glyphicon glyphicon-pencil"> </i>&nbsp; New Blog Entry</a></li>
                 </ul>
                 <ul class="list-unstyled hidden-xs" id="sidebar-footer">
-                    <li><a href="<?= base_url() ?>"><i class="glyphicon glyphicon-arrow-left"></i> Back to newsfeed</a></li>
+                    <li><a href="<?= base_url() ?>"><i class="glyphicon glyphicon-arrow-left"></i> Back to Newsfeed</a></li>
                 </ul>
-
+              
+                <!-- tiny only nav-->
+              <!-- <ul class="nav visible-xs" id="xs-menu">
+                    <li><a href="#" class="text-center"><i class="glyphicon glyphicon-list-alt"></i></a></li>
+                    <li><a href="#" class="text-center"><i class="glyphicon glyphicon-list"></i></a></li>
+                    <li><a href="#" class="text-center"><i class="glyphicon glyphicon-paperclip"></i></a></li>
+                    <li><a href="#" class="text-center"><i class="glyphicon glyphicon-refresh"></i></a></li>
+                </ul> -->
+              
             </div>
             <!-- /sidebar -->
           
@@ -96,43 +104,38 @@
                           <div class="col-sm-8">
 <?php
 if (isset($_GET['error_post'])) {
-  echo "<span class=\"error_post\">There's something error in your post. <a href='". base_url('#postModal') . "' role=\"button\" data-toggle=\"modal\">Please try again.</a><br/><br/></span>";
+  echo "<span class=\"error_post\">There's something wrong with your post. <a href='". base_url('#postModal') . "' role=\"button\" data-toggle=\"modal\">Please try again.</a><br/><br/></span>";
 }
 ?>
-              <div ng-app="comment" ng-controller="commentController">
-          <div class="panel panel-default">
-            <div class="panel-heading"><div class="pull-right" style="padding-top:13px"><?= $post->date_posted ?></div> 
-                <a href="<?= base_url($post->username)?>">
-                    <h4><img src="<?= base_url($post->profile_pic) ?>" style="max-width=:30px;max-height:30px;"/> <?= $post->fullname ?></h4>
+<div ng-app="photos" ng-controller="photosController">
+
+          <div class="panel panel-default" ng-repeat="post in posts">
+          <div ng-show="post.photo != null">
+            <div class="panel-heading"><div class="pull-right" style="padding-top:13px">{{post.date_posted}}</div> 
+                <a href="<?= base_url('{{post.username}}')?>">
+                    <h4><img src="<?= base_url('{{post.profile_pic}}') ?>" style="max-width=:30px;max-height:30px;"/> {{post.fullname}}</h4>
                 </a>
             </div>
-            <form ng-submit="signup()" method="POST">
-            <div class="panel-body">
-            <?php if(!empty($post->photo) == true) { ?>
-                <div align="center">
-                  <img src="/public/uploads/<?= $post->photo ?>" style="margin-bottom:10px;max-width:618px;max-height:500px;">
+            <div class="panel-body" align="center">
+                
+                  <img src="/public/uploads/{{post.photo}}" style="margin-bottom:10px;max-width:618px;max-height:500px;">
+                
+                <hr>
+                <div align="center" style="margin-top:-10px;">
+                    <a href="<?= base_url('post') ?>/{{post.id}}">Discuss <i class="glyphicon glyphicon-comment"> </i></a>
                 </div>
-            <?php } ?>
-                    <?= $post->body ?> 
-                    <hr/>    
-                <div ng-repeat="comment in comments">
-<!--                   <hr> -->
-                  <a href="<?= base_url() ?>{{comment.username}}">
-                  <img src="<?= base_url('{{comment.profile_pic}}') ?>" style="max-width=:30px;max-height:30px;"/>
-                  {{comment.fullname}}
-                  </a>
-                  {{comment.comment}}<br/><br/>
-                </div><br/>
-              <div class="input-group">
-                    <input type="text" id="comment" class="form-control" placeholder="Add a comment.." name="comment" ng-model="comm.comment">
-                    <div class="input-group-btn">
-                        <button class="btn btn-default" data-ng-click="newcomment()">Post comment</button>
-                    </div>
-              </div>
-              </div>
-              </form>
+<!--               <div class="input-group">
+                  <div class="input-group-btn">
+                      <button class="btn btn-default" data-ng-click="like(post.id)">{{post.like}} <i class="glyphicon glyphicon-thumbs-up"> </i> </button>
+                      <button class="btn btn-default" onclick="alert('Hello')">{{post.comment}} <i class="glyphicon glyphicon-comment"></i></button>
+                  </div>
+                  <input type="text" class="form-control" placeholder="Add a comment..">
+              </div> -->
+            </div>
             </div>
           </div>
+
+</div>
                           </div>
                        </div><!--/row-->
                       
@@ -217,30 +220,30 @@ if (isset($_GET['error_post'])) {
 </div> <!-- end newsfeed -->
 
 <script>
+  
+var photos = angular.module('photos', []);
 
-var comment = angular.module('comment', []);
 
-
-comment.controller('commentController',function($scope,$http){
-     var getComments = function(){
-        $http.get('/status_list/comment_gen/<?= $post->id ?>').success(function(data){
-                $scope.comments = data;
+photos.controller('photosController',function($scope,$http){
+     var getPosts = function(){
+        $http.get('/status_list/profile_gen/<?= $this->uri->segment(1) ?>').success(function(data){
+                $scope.posts = data;
                 console.log(data);
         }); 
     }
-    getComments();
+    getPosts();
 
-    $scope.newcomment = function() {
+    $scope.like = function(id) {
       $http({
         method: "POST",
-        url: '/status_list/comment_new/<?= $post->id ?>',
+        url: '/status_list/like/'+ id,
         headers: { 'Content-Type' : 'application/x-www-form-urlencoded' },
-        data: $.param($scope.comm.comment)
+        data: $.param(id)
         })
         .success(function(data){
-          $('#comment').val('');
           console.log(data);
-          getComments();
+          getPosts();
+
         })
         .error(function(data){
           console.log(data);

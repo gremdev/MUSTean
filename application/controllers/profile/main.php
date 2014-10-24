@@ -44,7 +44,7 @@ class Main extends Private_Controller {
 	                    'count'     => count($friends),
 	                    'friends'   => $friends,
 	                    'info'      => $my_info,
-	                    'friend_but'=> $is_friend
+	                    'is_friend'=> $is_friend
 
 	                );
 	            $this->load->view('template', $data);

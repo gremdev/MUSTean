@@ -27,43 +27,100 @@
                 });
               });
         </script>
+
+<?php
+if (isset($is_friend) && $is_friend == 1) {
+  echo '
+    <script>
+        $("#addfriend").hide();
+        $("#cancelrequest").hide();
+        $("#unfriend").show();
+        $("#accept").hide();
+    </script>
+  ';
+}
+elseif (isset($is_friend) && $is_friend == 2) {
+  echo '
+  <script>
+        $("#addfriend").hide();
+        $("#unfriend").hide();
+        $("#cancelrequest").show();
+        $("#accept").hide();
+  </script>
+  ';
+}
+elseif (isset($is_friend) && $is_friend == 3) {
+  echo '
+  <script>
+        $("#addfriend").hide();
+        $("#unfriend").hide();
+        $("#cancelrequest").hide();
+        $("#accept").show();
+  </script>
+  ';
+}
+else{
+  echo '
+  <script>
+        $("#cancelrequest").hide();
+        $("#unfriend").hide();
+        $("#addfriend").show();
+        $("#accept").hide();
+  </script>
+  ';
+}
+?>
+
         <script type="text/javascript">
 
           $("#unfriend").click(function(){
-            $.post("demo_test_post.asp",
-              {
-                id:"<?= $friend_but->id ?>"
-              },
+            $.post("/cancel_or_unfriend/<?= $this->uri->segment(1) ?>",
               function(data,status){
-                alert("Data: " + data + "\nStatus: " + status);
+                if (data == 'ok') {
+                  alert(data +  "unfriend");
+                  $('#unfriend').hide();
+                  $('#addfriend').show();
+                  $('#cancelrequest').hide();
+                };
               });
             });
-          </script>
 
-        <script type="text/javascript">
-
-          $("#addfriend").click(function(){
-            $.post("demo_test_post.asp",
-              {
-                id:"<?= $info->id ?>"
-              },
+          $("#accept").click(function(){
+            $.post("/accept/<?= $this->uri->segment(1) ?>",
               function(data,status){
-                alert("Data: " + data + "\nStatus: " + status);
+                if (data == 'ok') {
+                  alert(data +  "accept");
+                  $('#unfriend').show();
+                  $('#addfriend').hide();
+                  $('#cancelrequest').hide();
+                  $('#accept').hide();
+                };
               });
             });
-          </script>
-          
-        <script type="text/javascript">
+
 
           $("#cancelrequest").click(function(){
-            $.post("demo_test_post.asp",
-              {
-                id:"<?= $friend_but->id ?>"
-              },
+            $.post("/cancel_or_unfriend/<?= $this->uri->segment(1) ?>",
               function(data,status){
-                alert("Data: " + data + "\nStatus: " + status);
+                if (data == 'ok') {
+                  $('#addfriend').show();
+                  $('#cancelrequest').hide();
+                  $('#unfriend').hide();
+                };
               });
             });
+
+
+          $("#addfriend").click(function(){
+            $.post("/addfriend/<?= $this->uri->segment(1) ?>",
+              function(data,status){
+                  $('#addfriend').hide();
+                  $('#cancelrequest').show();
+                  $('#unfriend').hide();
+              });
+            });
+
         </script>
+
     </body>
 </html>

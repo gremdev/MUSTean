@@ -8,7 +8,7 @@ class Notification_model extends CI_Model
 			->from('friends as a')
 			->join('user_info as b', 'b.id = a.friend')
 			->where('user', $this->id)
-			->where('status', '0')
+			->where('status', '3')
 			->get()->result_array();
 
 		return json_encode($request);
