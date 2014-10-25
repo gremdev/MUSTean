@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Oct 25, 2014 at 04:15 AM
+-- Generation Time: Oct 25, 2014 at 08:34 AM
 -- Server version: 5.5.40-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.4
 
@@ -19,6 +19,21 @@ SET time_zone = "+00:00";
 --
 -- Database: `mustean`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `blog`
+--
+
+CREATE TABLE IF NOT EXISTS `blog` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) NOT NULL,
+  `body` text NOT NULL,
+  `date` datetime NOT NULL,
+  `blogger` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=100000000 ;
 
 -- --------------------------------------------------------
 
@@ -162,7 +177,7 @@ CREATE TABLE IF NOT EXISTS `messages` (
   `date` datetime NOT NULL,
   `convo_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10006 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10024 ;
 
 --
 -- Dumping data for table `messages`
@@ -174,7 +189,25 @@ INSERT INTO `messages` (`id`, `user`, `friend`, `message`, `date`, `convo_id`) V
 (10002, 1000001, NULL, 'mo gana unta Lord..', '2014-10-25 04:04:58', 100000),
 (10003, NULL, 1000005, 'yes! ni-gana sya!', '2014-10-25 04:07:12', 100000),
 (10004, 1000001, NULL, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', '2014-10-25 04:11:47', 100000),
-(10005, 1000001, NULL, 'Hi Je .', '2014-10-25 04:14:06', 100001);
+(10005, 1000001, NULL, 'Hi Je .', '2014-10-25 04:14:06', 100001),
+(10006, 1000001, NULL, 'ricky!', '2014-10-25 04:42:00', 100002),
+(10007, 1000001, NULL, 'ricky!', '2014-10-25 04:42:01', 100002),
+(10008, 1000001, NULL, 'ric', '2014-10-25 04:42:10', 100002),
+(10009, 1000001, NULL, 'kath?', '2014-10-25 04:43:04', 100000),
+(10010, NULL, 1000005, 'yes grem?', '2014-10-25 04:44:21', 100000),
+(10011, NULL, 1000005, '......', '2014-10-25 04:49:17', 100000),
+(10012, NULL, 1000005, '......', '2014-10-25 04:49:17', 100000),
+(10013, NULL, 1000005, '......', '2014-10-25 04:49:21', 100000),
+(10014, NULL, 1000005, '.', '2014-10-25 04:51:42', 100000),
+(10015, NULL, 1000005, 'test', '2014-10-25 05:48:22', 100000),
+(10016, NULL, 1000005, 'gjghj', '2014-10-25 05:49:02', 100000),
+(10017, 1000001, NULL, 'test', '2014-10-25 05:49:56', 100000),
+(10018, 1000001, NULL, 'j', '2014-10-25 05:51:00', 100000),
+(10019, 1000001, NULL, 'jkh', '2014-10-25 05:51:13', 100000),
+(10020, 1000001, NULL, 'jg', '2014-10-25 05:53:25', 100000),
+(10021, NULL, 1000005, 'hjghj', '2014-10-25 05:54:03', 100000),
+(10022, NULL, 1000005, 'ghgfh', '2014-10-25 05:55:55', 100000),
+(10023, NULL, 1000005, 'test', '2014-10-25 05:56:49', 100000);
 
 -- --------------------------------------------------------
 
@@ -197,8 +230,7 @@ CREATE TABLE IF NOT EXISTS `mustean_sessions` (
 --
 
 INSERT INTO `mustean_sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
-('13b7237f47dad39fd76d450a451d934b', '127.0.0.1', 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.104 Safari/537.36', 1414181417, 'a:4:{s:9:"user_data";s:0:"";s:8:"username";s:7:"gremdev";s:2:"id";s:7:"1000001";s:9:"logged_in";b:1;}'),
-('961431d57796e6e97d7b00d03f295fd3', '127.0.0.1', 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.104 Safari/537.36', 1414181202, 'a:4:{s:9:"user_data";s:0:"";s:8:"username";s:5:"kakat";s:2:"id";s:7:"1000005";s:9:"logged_in";b:1;}');
+('81b821d4c543e85dd45dbedde865a884', '127.0.0.1', 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.104 Safari/537.36', 1414196684, 'a:4:{s:9:"user_data";s:0:"";s:8:"username";s:7:"gremdev";s:2:"id";s:7:"1000001";s:9:"logged_in";b:1;}');
 
 -- --------------------------------------------------------
 
@@ -213,7 +245,7 @@ CREATE TABLE IF NOT EXISTS `posts` (
   `photo` varchar(50) DEFAULT NULL,
   `user_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10021 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10022 ;
 
 --
 -- Dumping data for table `posts`
@@ -237,7 +269,8 @@ INSERT INTO `posts` (`id`, `body`, `date_posted`, `photo`, `user_id`) VALUES
 (10016, 'Hello! From ricky...', '2014-10-23 05:03:56', 'e901d847fbb148ee2379b1abcaf91de8.png', 1000006),
 (10018, 'Hi! from Jessa ....', '2014-10-24 22:31:02', NULL, 1000007),
 (10019, 'Hi from JESSA!', '2014-10-24 22:39:10', NULL, 1000009),
-(10020, 'Post from Ricky..', '2014-10-24 22:52:38', '1fbfab86ef2e2d9899eb9ea623b55249.png', 1000010);
+(10020, 'Post from Ricky..', '2014-10-24 22:52:38', '1fbfab86ef2e2d9899eb9ea623b55249.png', 1000010),
+(10021, 'yty', '2014-10-25 05:29:35', NULL, 1000001);
 
 -- --------------------------------------------------------
 
@@ -301,10 +334,10 @@ CREATE TABLE IF NOT EXISTS `user_info` (
 --
 
 INSERT INTO `user_info` (`id`, `username`, `password`, `email`, `fullname`, `address`, `birthday`, `about`, `profile_pic`, `course`, `year`) VALUES
-(1000001, 'gremdev', '81dc9bdb52d04dc20036dbd8313ed055', 'grem.ociones@gmail.com', 'Gremeir Mitz Ociones', '#32 Zone 8 Cugman, Cagayan de Oro City', '1994-12-14', NULL, 'public/uploads/4314ca1f9341eb91f49ad98aa6771d2a.png', NULL, NULL),
-(1000005, 'kakat', '81dc9bdb52d04dc20036dbd8313ed055', 'kakat.downy@gmail.com', 'kathlyn huavas', 'bugo, cdo', '1995-04-12', NULL, 'public/img/default-avatar.jpg', NULL, NULL),
-(1000009, 'jessa', '81dc9bdb52d04dc20036dbd8313ed055', 'jessa.vasallo@gmail.com', 'Jessa Mae Vasallo', 'bugo, cdo', '1994-12-14', NULL, 'public/img/default-avatar.jpg', NULL, NULL),
-(1000010, 'ricky', '81dc9bdb52d04dc20036dbd8313ed055', 'ricky.pantuan@gmail.com', 'ricky pantuan', 'bugo, cdo', '1994-12-14', NULL, 'public/img/default-avatar.jpg', NULL, NULL),
+(1000001, 'gremdev', '0d6e41cb363e18d93ac1dc6eb42bc3e8', 'grem.ociones@gmail.com', 'Gremeir Mitz Ociones', '#32 Zone 8 Cugman, Cagayan de Oro City', '1994-12-14', 'Just a simple guy.', 'public/uploads/922f4c2c7377e36cbf793484ab618472.jpg', 'BSIT', 4),
+(1000005, 'kakat', '81dc9bdb52d04dc20036dbd8313ed055', 'kakat.downy@gmail.com', 'kathlyn huavas', 'bugo, cdo', '1995-04-12', NULL, 'public/uploads/add28ea9978cdd652ac8ac6562a376bb.jpg', NULL, NULL),
+(1000009, 'jessa', '81dc9bdb52d04dc20036dbd8313ed055', 'jessa.vasallo@gmail.com', 'Jessa Mae Vasallo', 'bugo, cdo', '1994-12-14', NULL, 'public/uploads/dc1e45d260320816194e248bc7eefc85.jpg', NULL, NULL),
+(1000010, 'ricky', '81dc9bdb52d04dc20036dbd8313ed055', 'ricky.pantuan@gmail.com', 'ricky pantuan', 'bugo, cdo', '1994-12-14', NULL, 'public/uploads/483af5ade0b24ff6993b0c48a55a90e5.jpg', NULL, NULL),
 (1000011, 'vanbautista', '81dc9bdb52d04dc20036dbd8313ed055', 'van.bautista@gmail.com', 'van bautista', 'cagayan de oro', '1994-12-14', NULL, 'public/img/default-avatar.jpg', NULL, NULL);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
