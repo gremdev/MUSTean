@@ -68,6 +68,9 @@ $route['status_list/pm_new/:any']		= "status_list/pm_new";
 
 $route['blog']							= "blog/index";
 $route['blog/new']						= "blog/newpost";
+$route['blog/gen']						= "blog/gen";
+$route['blog/post/:any']				= "blog/post";
+$route['blog/singlepost/:any']			= "blog/singlepost";
 
 $route[':any/about']					= "profile/about";
 $route[':any/edit']						= "profile/edit";

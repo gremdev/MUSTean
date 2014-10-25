@@ -81,8 +81,11 @@
                           echo"<span class=\"label label-danger\">&nbsp;</span>";
                           }?></a>
                       </li>
-                      <li>
+                      <!-- <li>
                         <a href="#notifModal" role="button" data-toggle="modal"><i class="glyphicon glyphicon-globe"></i> &nbsp;<span class="label label-danger"> +35</span></a>
+                      </li> -->
+                       <li>
+                        <a href="<?= base_url() . $this->username; ?>"><i class="glyphicon glyphicon-list-alt"></i> Read Blog</a>
                       </li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">

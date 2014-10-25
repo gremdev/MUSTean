@@ -80,6 +80,7 @@
                           echo"<span class=\"label label-danger\">&nbsp;</span>";
                           }?></a>
                       </li>
+                      <li>
                       <!-- <li>
                         <a href="#notifModal" role="button" data-toggle="modal"><i class="glyphicon glyphicon-globe"></i> &nbsp;<span class="label label-danger"> +35</span></a>
                       </li> -->
@@ -129,11 +130,16 @@ if (isset($_GET['success'])) {
 </div>
 
 <div ng-app="blog" ng-controller="blogController">
-            <div class="panel panel-default" ng-repeat="post in posts">
+            <div class="panel panel-default">
             <div class="panel-heading">
-              <a href="<?= base_url() ?>blog/post/{{post.id}}"><h3>{{post.title}}</h3></a>
-              <a href="<?= base_url() ?>{{post.username}}"><h5>by: {{post.fullname}}</h5></a>
-              <h6>{{post.date}}</h6>
+              <a href="<?= base_url() ?>blog/post/{{posts.id}}"><h3>{{posts.title}}</h3></a>
+              <a href="<?= base_url() ?>{{posts.username}}"><h5>by: {{posts.fullname}}</h5></a>
+              <h6>{{posts.date}}</h6>
+            </div>
+             <div class="panel-body" align="left">
+                
+                  <p>{{posts.body}}</p>
+
             </div>
               <hr/>
           </div>
@@ -260,7 +266,7 @@ var blog = angular.module('blog', []);
 
 blog.controller('blogController',function($scope,$http){
      var getPosts = function(){
-        $http.get('/blog/gen/').success(function(data){
+        $http.get('/blog/singlepost/<?= $this->uri->segment(3) ?>').success(function(data){
                 $scope.posts = data;
                 console.log(data);
         }); 

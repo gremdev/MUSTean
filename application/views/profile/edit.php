@@ -19,7 +19,7 @@
                     <li><a href="<?= base_url('messages') ?>"><i class="glyphicon glyphicon-comment"> </i>&nbsp; Messages</a></li>
                     <li><a href="<?= base_url($this->username . '/photos') ?>"><i class="glyphicon glyphicon-picture"> </i>&nbsp; Photos</a></li>
                     <li><a href="<?= base_url($this->username . '/friends') ?>"><i class="glyphicon glyphicon-user"> </i>&nbsp; Friends</a></li>
-                    <li><a href="#"><i class="glyphicon glyphicon-pencil"> </i>&nbsp; New Blog Entry</a></li>
+                    <li><a href="<?= base_url('blog/new') ?>"><i class="glyphicon glyphicon-pencil"> </i>&nbsp; New Blog Entry</a></li>
                 </ul>
                 <ul class="list-unstyled hidden-xs" id="sidebar-footer">
                     <li><a href="<?= base_url() ?>"><i class="glyphicon glyphicon-arrow-left"></i> Back to Newsfeed</a></li>
@@ -80,8 +80,11 @@
                           echo"<span class=\"label label-danger\">&nbsp;</span>";
                           }?></a>
                       </li>
-                      <li>
+                      <!-- <li>
                         <a href="#notifModal" role="button" data-toggle="modal"><i class="glyphicon glyphicon-globe"></i> &nbsp;<span class="label label-danger"> +35</span></a>
+                      </li> -->
+                       <li>
+                        <a href="<?= base_url() . $this->username; ?>"><i class="glyphicon glyphicon-list-alt"></i> Read Blog</a>
                       </li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
