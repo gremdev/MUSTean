@@ -9,18 +9,17 @@
                 <ul class="nav">
                 <li><a href="#" data-toggle="offcanvas" class="visible-xs text-center"><i class="glyphicon glyphicon-chevron-right"></i></a></li>
               </ul>
-                 <a href="<?= base_url($info->username) ?>">
+                 <a href="<?= base_url($this->username) ?>">
                     <img style="width:200px;height:200px;margin-top:-5px;border-radius:100px;" src="<?= base_url($info->profile_pic) ?>">
                     <h3><?= $info->fullname ?></h3>
                 </a>
                 <ul class="nav hidden-xs" id="lg-menu">
-                    <li><a href="<?= base_url($info->username . '/photos') ?>"><i class="glyphicon glyphicon-picture"> </i>&nbsp; Photos</a></li>
-                    <li><a href="<?= base_url($info->username . '/friends') ?>"><i class="glyphicon glyphicon-user"> </i>&nbsp; Friends</a></li>
-                    <li><a href="<?= base_url('messages/'.$info->username) ?>"><i class="glyphicon glyphicon-user"> </i>&nbsp; Message</a></li>
-<li style="margin-left:-5px;"><button class="btn btn-primary btn-block" id="unfriend">Unfriend</button></li>
-<li style="margin-left:-5px;"><button class="btn btn-primary btn-block" id="cancelrequest">Cancel Request</button></li>
-<li style="margin-left:-5px;"><button class="btn btn-primary btn-block" id="addfriend">Add Friend</button></li>
-<li style="margin-left:-5px;"><button class="btn btn-primary btn-block" id="accept">Accept Request</button></li>
+                    <li><a href="<?= base_url($this->username . '/edit'); ?>"><i class="glyphicon glyphicon-edit"> </i>&nbsp; Edit Profile</a></li>
+                    <li class="active"><a href="<?= base_url() ?>"><i class="glyphicon glyphicon-list-alt"> </i>&nbsp; Newsfeed</a></li>
+                    <li><a href="<?= base_url('messages') ?>"><i class="glyphicon glyphicon-comment"> </i>&nbsp; Messages</a></li>
+                    <li><a href="<?= base_url($this->username . '/photos') ?>"><i class="glyphicon glyphicon-picture"> </i>&nbsp; Photos</a></li>
+                    <li><a href="<?= base_url($this->username . '/friends') ?>"><i class="glyphicon glyphicon-user"> </i>&nbsp; Friends</a></li>
+                    <li><a href="#"><i class="glyphicon glyphicon-pencil"> </i>&nbsp; New Blog Entry</a></li>
                 </ul>
                 <ul class="list-unstyled hidden-xs" id="sidebar-footer">
                     <li><a href="<?= base_url() ?>"><i class="glyphicon glyphicon-arrow-left"></i> Back to Newsfeed</a></li>
@@ -111,21 +110,75 @@ if (isset($_GET['error_post'])) {
   echo "<span class=\"error_post\">There's something wrong with your post. <a href='". base_url('#postModal') . "' role=\"button\" data-toggle=\"modal\">Please try again.</a><br/><br/></span>";
 }
 ?>
-<div ng-app="friend" ng-controller="friendController">
 
-          <div class="panel panel-default" ng-repeat="post in posts">
+<div align="center">
+              <?php
+if (isset($_GET['invalid_pass_profile'])) {
+  echo '<span style="color:red;"><br/>Invalid Password. Please try again.<br/></span>';
+}
+if (isset($_GET['invalid_pass_data'])) {
+  echo '<span style="color:red;"><br/>Invalid Password data submitted. Please try again.<br/></span>';
+}
+if (isset($_GET['success'])) {
+  echo '<span style="color:green;"><br/>Success!<br/></span>';
+}
+            ?>
+</div>
+
+          <div class="panel panel-default">
             <div class="panel-heading">
+              <h3>Blog Title</h3>
+              <h5>by: Blogger's name</h5>
+              <h6>2014:12:34 2:12:34</h6>
             </div>
-            <div class="panel-body" align="center">
-                <a href="<?= base_url('{{post.username}}') ?>">
-                  <img src="<?= base_url() ?>{{post.profile_pic}}" style="margin-bottom:10px;max-width:200px;max-height:200px;">
-                  {{post.fullname}}
-                </a>
+
+            <div class="panel-body" align="left">
+               <p>
+                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                 quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                 consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                 cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                 proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+               </p>
                 <hr>
             </div>
           </div>
 
-</div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3>Blog Title</h3>
+              <h5>by: Blogger's name</h5>
+              <h6>2014:12:34 2:12:34</h6>
+            </div>
+
+            <div class="panel-body" align="left">
+               <p>
+                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                 quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                 consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                 cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                 proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+               </p>
+                <hr>
+            </div>
+          </div>
+
                           </div>
                        </div><!--/row-->
                       
@@ -239,40 +292,4 @@ if (count($pm_msg) == 0) {
   </div>
 </div>
 
-
 </div> <!-- end newsfeed -->
-
-<script>
-  
-var friend = angular.module('friend', []);
-
-
-friend.controller('friendController',function($scope,$http){
-     var getPosts = function(){
-        $http.get('/status_list/friend_gen/<?= $this->uri->segment(1) ?>').success(function(data){
-                $scope.posts = data;
-                console.log(data);
-        }); 
-    }
-    getPosts();
-
-    $scope.like = function(id) {
-      $http({
-        method: "POST",
-        url: '/status_list/like/'+ id,
-        headers: { 'Content-Type' : 'application/x-www-form-urlencoded' },
-        data: $.param(id)
-        })
-        .success(function(data){
-          console.log(data);
-          getPosts();
-
-        })
-        .error(function(data){
-          console.log(data);
-        });
-    }
-
-});
-
-</script>

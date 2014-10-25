@@ -111,6 +111,10 @@ if (isset($_GET['error_post'])) {
   echo "<span class=\"error_post\">There's something wrong with your post. <a href='". base_url('#postModal') . "' role=\"button\" data-toggle=\"modal\">Please try again.</a><br/><br/></span>";
 }
 ?>
+          <div class="panel panel-default">
+            <div class="panel-heading"><a href="<?= base_url($info->username."/about") ?>"><h3>About Me</h3></a>
+            </div>
+          </div>
 <div ng-app="profile" ng-controller="profileController">
 
           <div class="panel panel-default" ng-repeat="post in posts">

@@ -9,18 +9,17 @@
                 <ul class="nav">
                 <li><a href="#" data-toggle="offcanvas" class="visible-xs text-center"><i class="glyphicon glyphicon-chevron-right"></i></a></li>
               </ul>
-                 <a href="<?= base_url($info->username) ?>">
+                 <a href="<?= base_url($this->username) ?>">
                     <img style="width:200px;height:200px;margin-top:-5px;border-radius:100px;" src="<?= base_url($info->profile_pic) ?>">
                     <h3><?= $info->fullname ?></h3>
                 </a>
                 <ul class="nav hidden-xs" id="lg-menu">
-                    <li><a href="<?= base_url($info->username . '/photos') ?>"><i class="glyphicon glyphicon-picture"> </i>&nbsp; Photos</a></li>
-                    <li><a href="<?= base_url($info->username . '/friends') ?>"><i class="glyphicon glyphicon-user"> </i>&nbsp; Friends</a></li>
-                    <li><a href="<?= base_url('messages/'.$info->username) ?>"><i class="glyphicon glyphicon-user"> </i>&nbsp; Message</a></li>
-<li style="margin-left:-5px;"><button class="btn btn-primary btn-block" id="unfriend">Unfriend</button></li>
-<li style="margin-left:-5px;"><button class="btn btn-primary btn-block" id="cancelrequest">Cancel Request</button></li>
-<li style="margin-left:-5px;"><button class="btn btn-primary btn-block" id="addfriend">Add Friend</button></li>
-<li style="margin-left:-5px;"><button class="btn btn-primary btn-block" id="accept">Accept Request</button></li>
+                    <li><a href="<?= base_url($this->username . '/edit'); ?>"><i class="glyphicon glyphicon-edit"> </i>&nbsp; Edit Profile</a></li>
+                    <li class="active"><a href="<?= base_url() ?>"><i class="glyphicon glyphicon-list-alt"> </i>&nbsp; Newsfeed</a></li>
+                    <li><a href="<?= base_url('messages') ?>"><i class="glyphicon glyphicon-comment"> </i>&nbsp; Messages</a></li>
+                    <li><a href="<?= base_url($this->username . '/photos') ?>"><i class="glyphicon glyphicon-picture"> </i>&nbsp; Photos</a></li>
+                    <li><a href="<?= base_url($this->username . '/friends') ?>"><i class="glyphicon glyphicon-user"> </i>&nbsp; Friends</a></li>
+                    <li><a href="#"><i class="glyphicon glyphicon-pencil"> </i>&nbsp; New Blog Entry</a></li>
                 </ul>
                 <ul class="list-unstyled hidden-xs" id="sidebar-footer">
                     <li><a href="<?= base_url() ?>"><i class="glyphicon glyphicon-arrow-left"></i> Back to Newsfeed</a></li>
@@ -111,21 +110,48 @@ if (isset($_GET['error_post'])) {
   echo "<span class=\"error_post\">There's something wrong with your post. <a href='". base_url('#postModal') . "' role=\"button\" data-toggle=\"modal\">Please try again.</a><br/><br/></span>";
 }
 ?>
-<div ng-app="friend" ng-controller="friendController">
 
-          <div class="panel panel-default" ng-repeat="post in posts">
-            <div class="panel-heading">
+<div align="center">
+              <?php
+if (isset($_GET['invalid_pass_profile'])) {
+  echo '<span style="color:red;"><br/>Invalid Password. Please try again.<br/></span>';
+}
+if (isset($_GET['invalid_pass_data'])) {
+  echo '<span style="color:red;"><br/>Invalid Password data submitted. Please try again.<br/></span>';
+}
+if (isset($_GET['success'])) {
+  echo '<span style="color:green;"><br/>Success!<br/></span>';
+}
+            ?>
+</div>
+
+          <div class="panel panel-default">
+            <div class="panel-heading"><h3>About Me</h3>
             </div>
-            <div class="panel-body" align="center">
-                <a href="<?= base_url('{{post.username}}') ?>">
-                  <img src="<?= base_url() ?>{{post.profile_pic}}" style="margin-bottom:10px;max-width:200px;max-height:200px;">
-                  {{post.fullname}}
-                </a>
+
+            <div class="panel-body" align="left">
+               <div class="form-group">
+                    <input type="text" placeholder="fullname" class="fullname form-control" name="fullname" value="<?= $info->fullname ?>" disabled>
+                </div>
+                <div class="form-group">
+                    <input type="text" placeholder="address" class="address form-control" name="address" value="<?= $info->address ?>" disabled>
+                </div>
+                <div class="form-group">
+                    <textarea type="text" placeholder="About me" class="about form-control" name="about" disabled><?= $info->about ?></textarea>
+                </div>
+                <div class="form-group">
+                    <input type="text" placeholder="My Course" class="course form-control" name="course" disabled value="<?= $info->course ?>" >
+                </div>
+                <div class="form-group">
+                    <input type="text" placeholder="My Year in College" class="year form-control" disabled name="year" value="<?= $info->year ?>" >
+                </div>
+                <div class="form-group">
+                    <input type="date" placeholder="12/14/1994" class="birthday form-control" disabled name="birthday" value="<?= $info->birthday ?>" >
+                </div>
                 <hr>
             </div>
           </div>
 
-</div>
                           </div>
                        </div><!--/row-->
                       
@@ -239,40 +265,4 @@ if (count($pm_msg) == 0) {
   </div>
 </div>
 
-
 </div> <!-- end newsfeed -->
-
-<script>
-  
-var friend = angular.module('friend', []);
-
-
-friend.controller('friendController',function($scope,$http){
-     var getPosts = function(){
-        $http.get('/status_list/friend_gen/<?= $this->uri->segment(1) ?>').success(function(data){
-                $scope.posts = data;
-                console.log(data);
-        }); 
-    }
-    getPosts();
-
-    $scope.like = function(id) {
-      $http({
-        method: "POST",
-        url: '/status_list/like/'+ id,
-        headers: { 'Content-Type' : 'application/x-www-form-urlencoded' },
-        data: $.param(id)
-        })
-        .success(function(data){
-          console.log(data);
-          getPosts();
-
-        })
-        .error(function(data){
-          console.log(data);
-        });
-    }
-
-});
-
-</script>

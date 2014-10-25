@@ -66,6 +66,10 @@ $route['messages/:any']					= "profile/messages/inbox";
 $route['status_list/pm_gen/:any']		= "status_list/pm_gen";
 $route['status_list/pm_new/:any']		= "status_list/pm_new";
 
+$route['blog']							= "blog/index";
+$route['blog/new']						= "blog/newpost";
+
+$route[':any/about']					= "profile/about";
 $route[':any/edit']						= "profile/edit";
 $route[':any/friends']					= "profile/friends";
 $route[':any/photos']					= "profile/photos";
